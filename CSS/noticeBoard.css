@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    background-color: hsl(226, 56%, 27%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 0;
+}
+
+nav {
+    background-color: hsl(0, 100%, 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    border-bottom: solid 2px;
+    font-weight: bold;
+}
+
+/* Institutional Logos */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#siciplogo {
+    width: 80px;
+    height: 55px;
+    margin-right: 10px;
+}
+
+#govtlogo {
+    width: 55px;
+    margin-right: 10px;
+}
+
+#ewulogo {
+    width: 70px;
+    margin-right: 10px;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-item a {
+    color: hsl(226, 56%, 27%);
+    position: relative;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: hsl(226, 56%, 27%);
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+
+}
+
+.nav-item a:active::after {
+    background-color: hsl(0, 0%, 50%);
+    width: 100%;
+    transition: 0.1s;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    z-index: 1000;
+    padding: 15px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    min-width: max-content;
+}
+
+.dropdown-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-item:hover .dropdown-menu,
+.dropdown-menu:hover {
+    max-height: 300px;
+    opacity: 1;
+    padding: 15px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: hsl(226, 56%, 27%);
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu Animation */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Notice Bar */
+.notice-bar {
+    background-color: hsl(226, 56%, 27%);
+    color: hsl(69, 100%, 66%);
+    font-size: 17px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 2px solid hsl(0, 0%, 100%);
+}
+
+.notice-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 30s linear infinite;
+    padding-top: 15px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/* ----------------------NOTICE BOARD------------------------ */
+
+.notice-board {
+    margin: 200px 60px;
+    padding: 70px 200px;
+    border: 1px solid black;
+}
+
+.title-class {
+    border-bottom: 4px solid #182e59;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 20px; */
+
+}
+
+.title-class h2 {
+    margin: 0;
+}
+
+#notice-title {
+    display: inline-block;
+    padding: 0 18px;
+    color: #fff;
+    background: #182e59;
+    position: relative;
+}
+
+#notice-title:before {
+    content: "";
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #182e59;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    /* Ensures items outside container width are hidden */
+    width: 100%;
+    /* Adjust width as necessary */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.notice-item {
+    position: relative;
+    min-width: 250px;
+    margin: 5px;
+    text-align: center;
+    background-color: #182e59;
+    overflow: hidden;
+    /* Prevents overflow when zooming */
+    /* border: 1px solid rgb(168, 168, 168); */
+}
+
+.notice-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+}
+
+.notice-item:hover img {
+    transform: scale(1.1);
+    /* Zoom in the image */
+}
+
+/* Pseudo-element for dark overlay */
+.notice-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.notice-item:hover::after {
+    opacity: 1;
+
+}
+
+.caption {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #f3f576;
+
+}
+
+.title-class {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: #182e59;
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: #3a4d77;
+}
+
+.next-btn {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: hsl(226, 56%, 27%);
+    /* padding: 20px 0; */
+    color: hsl(0, 0%, 100%);
+}
+
+footer a {
+    color: hsl(0, 0%, 100%);
+    /* set the Email color white */
+    text-decoration: none;
+}
+
+/* Container styling */
+.contact-section {
+    text-align: center;
+    background-color: #dfe9ff;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Contact text styling */
+.contact-text {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* Adjust as needed */
+}
+
+
+/* Social media icon styling */
+.social-icon {
+    font-size: 25px;
+    width: 2em;
+    height: 2em;
+    color: #ffffff;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: color 0.3s;
+    border: 2px solid white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    border-radius: 8px;
+
+}
+
+
+.social-icon:hover {
+    background-color: white;
+    color: rgb(47, 128, 235);
+    border: 2px solid rgb(1, 15, 53);
+    border-radius: 8px;
+}
+
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Ensure even spacing between the three sections */
+    flex-wrap: wrap;
+    /* Wrap content if the screen is smaller */
+    text-align: left;
+    padding: 20px 150px;
+}
+
+
+.contact-info,
+.quick-links,
+.map {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Make each section take up equal space */
+    padding: 0 20px;
+    min-width: 250px;
+    /* Ensure the sections don't get too narrow on smaller screens */
+    /* align-items: center; */
+}
+
+
+
+.contact-info h4,
+.quick-links h4,
+.map h4 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.icons div {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.icons div span {
+    text-align: left;
+}
+
+.icons .material-icons {
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.footer-nav-bar {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-nav-item {
+    margin: 10px 0;
+}
+
+.quick-links {
+    margin-left: 200px;
+}
+
+.quick-link-button {
+    width: 160px;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #546b85;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.quick-link-button:hover {
+    background-color: hsl(226, 56%, 27%);
+    border: 1px solid white;
+}
+
+.map-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+.footer-bottom p {
+    color: #ccc;
+    font-size: 15px;
+    border-top: 1px solid white;
+    text-align: center;
+    margin: 30px 100px 0px 100px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .presentaion-message {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: hsl(0, 0%, 100%);
+        padding: 20px 0;
+    }
+
+    .nav-bar.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        max-height: none;
+        opacity: 1;
+        padding: 10px 0;
+        display: none;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
+
+    .dropdown-arrow {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+
+
+    .nav-bar {
+        top: 100px;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+        /* Stack sections on top of each other on small screens */
+        text-align: center;
+    }
+
+    .contact-info,
+    .quick-links,
+    .map {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 40px;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+}

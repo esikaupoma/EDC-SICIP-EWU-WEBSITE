@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Event Calendar</title>
+    <link rel="stylesheet" href="/CSS/eventCalendar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="calendar-container">
+
+        <div class="sidebar">
+            <div class="years">
+                <i class="fa-solid fa-chevron-left year-btn" onclick="prevYear()"></i>
+                <span class="year" id="year">2020</span>
+                <i class="fa-solid fa-chevron-right year-btn" onclick="nextYear()"></i>
+            </div>
+            <ul class="months">
+                <li onclick="setMonth(0)">January</li>
+                <li onclick="setMonth(1)">February</li>
+                <li onclick="setMonth(2)">March</li>
+                <li onclick="setMonth(3)">April</li>
+                <li onclick="setMonth(4)">May</li>
+                <li onclick="setMonth(5)">June</li>
+                <li onclick="setMonth(6)" class="active">July</li>
+                <li onclick="setMonth(7)">August</li>
+                <li onclick="setMonth(8)">September</li>
+                <li onclick="setMonth(9)">October</li>
+                <li onclick="setMonth(10)">November</li>
+                <li onclick="setMonth(11)">December</li>
+            </ul>
+        </div>
+
+
+        <!-- Main calendar section -->
+        <div class="calendar">
+            <div class="month">
+                <h2 id="month-name">July</h2> <br>
+                <div class="days">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <br>
+                <div class="dates" id="dates"></div>
+            </div>
+        </div>
+
+        <!-- Event details section -->
+
+        <div class="event">
+            <h2>Our Events</h2>
+            <div class="event-list">
+                <!-- Event items will be inserted dynamically by JavaScript -->
+            </div>
+        </div>
+
+        <script src="/JS/eventCalendar.js"></script>
+</body>
+
+</html>

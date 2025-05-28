@@ -8,6 +8,16 @@ class SiteFooter extends HTMLElement {
     ]);
 
     shadow.innerHTML = `<style>${css}</style>${html}`;
+
+    const buttons = shadow.querySelectorAll('button[data-page]');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const page = button.getAttribute('data-page');
+        window.dispatchEvent(new CustomEvent('navigate', {
+          detail: { page }
+        }));
+      });
+    });
   }
 }
 

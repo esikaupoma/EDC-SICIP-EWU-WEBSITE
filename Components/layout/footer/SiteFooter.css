@@ -106,6 +106,7 @@ footer a {
 }
 
 .footer-nav-bar {
+    margin: 0;
     list-style-type: none;
     padding: 0;
 }
@@ -206,24 +207,160 @@ footer a {
 
 }
 
+@media screen and (max-width: 1900px) {
+    .footer-container {
+        justify-content: center;
+        gap: 24px;
+        padding: 20px;
+    }
 
-@media screen and (max-width: 1024px) {
+    .footer-container > div {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .footer-container h4 {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+
+    .icons div {
+        margin-bottom: 6px;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .icons div .material-icons {
+        font-size: 18px;
+        flex: 0 0 18px;
+    }
+
     .quick-link-button {
-        width: 250px;
-        font-size: 15px;
-        text-align: center;
+        width: 180px;
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .gallery-box {
+        height: 180px;
+    }
+
+    .gallery-button {
+        height: calc((180px - 32px) / 2);
+    }
+
+    .map iframe {
+        height: 180px;
+        min-width: 0;
+    }
+
+    .footer-nav-item {
+        margin: 6px 0;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .footer-container {
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .footer-container > div {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .footer-container h4 {
+        font-size: 14px;
+        padding-bottom: 4px;
+    }
+
+    .icons div {
+        margin-bottom: 4px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .icons div .material-icons {
+        font-size: 14px;
+        flex: 0 0 14px;
+    }
+
+    .quick-link-button {
+        width: 140px;
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
+    .gallery-box {
+        height: 140px;
+    }
+
+    .gallery-button {
+        height: calc((140px - 32px) / 2);
+    }
+
+    .map iframe {
+        height: 140px;
+        min-width: 0;
+    }
+
+    .footer-nav-item {
+        margin: 4px 0;
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .footer-container > div {
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+    }
+
+    .footer-container h4 {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 8px;
+    }
+
+    .icons div {
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .icons div .material-icons {
+        font-size: 24px;
+    }
+
     .quick-link-button {
         width: 300px;
         font-size: 15px;
+        padding: 8px 20px;
         text-align: center;
     }
 
-    .footer-bottom p { 
-        margin: 20px 40px 0px 40px;
+    .gallery-box {
+        height: 220px;
+    }
+
+    .gallery-button {
+        height: calc((220px - 32px) / 2);
+    }
+
+    .map iframe {
+        height: 220px;
     }
 }
 

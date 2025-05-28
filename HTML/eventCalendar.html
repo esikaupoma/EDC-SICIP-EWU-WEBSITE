@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Academic Event Calendar</title>
-    <link rel="stylesheet" href="/CSS/eventCalendar.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/CSS/eventCalendar.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="calendar-container">
 
+        <!-- Sidebar: year controls and months -->
         <div class="sidebar">
             <div class="years">
                 <i class="fa-solid fa-chevron-left year-btn" onclick="prevYear()"></i>
@@ -35,29 +35,53 @@
             </ul>
         </div>
 
-
-        <!-- Main calendar section -->
+        <!-- Main Calendar Section -->
         <div class="calendar">
             <div class="month">
-                <h2 id="month-name">July</h2> <br>
+                <h2 id="month-name">July</h2>
                 <div class="days">
                     <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
                 </div>
-                <br>
-                <div class="dates" id="dates"></div>
+                <div class="dates" id="dates">
+                    <!-- Dynamically generated date cells go here -->
+                    <!-- Example date structure:
+                    <div class="date current-date">
+                        14
+                        <div class="event-dots">
+                            <span class="event-dot red"></span>
+                            <span class="event-dot blue"></span>
+                        </div>
+                    </div>
+                    -->
+                </div>
             </div>
         </div>
 
-        <!-- Event details section -->
-
+        <!-- Event Details Section -->
         <div class="event">
             <h2>Our Events</h2>
-            <div class="event-list">
-                <!-- Event items will be inserted dynamically by JavaScript -->
+            <div class="event-list" id="event-list">
+                <!-- Event items dynamically inserted by JavaScript -->
+                <!-- Example event-item:
+                <div class="event-item red">
+                    <div class="event-date">
+                        <span class="day">14</span>
+                        <span class="month-year">Jul 2020</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Sample Event Title</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Venue Name</p>
+                        <p><i class="fa-regular fa-clock"></i> 10:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+                -->
             </div>
+            <p class="no-events" style="display:none;">No events for this date.</p>
         </div>
 
-        <script src="/JS/eventCalendar.js"></script>
+    </div>
+
+    <script src="/JS/eventCalendar.js"></script>
 </body>
 
 </html>

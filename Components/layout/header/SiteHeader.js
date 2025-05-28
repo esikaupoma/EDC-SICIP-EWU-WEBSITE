@@ -13,7 +13,8 @@ class SiteHeader extends HTMLElement {
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         const page = button.getAttribute('data-page');
-        window.dispatchEvent(new CustomEvent('navigate', {
+        // window.dispatchEvent  -->This allows each button to tell the system what page to load, based on its data-page value.
+        window.dispatchEvent(new CustomEvent('navigate', {   
           detail: { page }
         }));
         // Close the mobile menu

@@ -31,7 +31,7 @@ class SiteLayout extends HTMLElement {
   async loadPage(page, pushState = true) {
     if (!this.contentArea) return;
 
-    const tagName = `${page}-page`;  // e.g. edcSicipOfficials-page 
+    const tagName = `${page}-page`;  // e.g. home-page 
     const folderName = page;         // match folder name exactly
     const jsPath = `/Components/pages/${folderName}/${capitalize(page)}Page.js`;
 

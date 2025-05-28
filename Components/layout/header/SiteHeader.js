@@ -16,6 +16,51 @@ class SiteHeader extends HTMLElement {
         window.dispatchEvent(new CustomEvent('navigate', {
           detail: { page }
         }));
+        // Close the mobile menu
+        const nav = shadow.querySelector('nav');
+        const hamburger = shadow.querySelector('.hamburger-menu');
+        const icon = hamburger.querySelector('.material-symbols-outlined');
+        nav.classList.remove('nav-active');
+        icon.textContent = 'menu';
+      });
+    });
+
+    const hamburger = shadow.querySelector('.hamburger-menu');
+    const nav = shadow.querySelector('nav');
+    const icon = hamburger.querySelector('.material-symbols-outlined');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      
+
+      if (nav.classList.contains('nav-active')) {
+        icon.textContent = 'close';
+      } else {
+        icon.textContent = 'menu';
+      }
+    });
+
+    const dropdownButtons = shadow.querySelectorAll('.nav-item-dropdown > button');
+    dropdownButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+          e.stopPropagation(); 
+          const dropdown = button.parentElement;
+          const wasActive = dropdown.classList.contains('active');
+          
+          // Close all dropdowns
+          dropdownButtons.forEach(otherButton => {
+            otherButton.parentElement.classList.remove('active');
+          });
+          
+          if (!wasActive) {
+            dropdown.classList.add('active');
+          }
+      });
+    });
+    // Close dropdowns when clicking anywhere else
+    document.addEventListener('click', () => {
+      dropdownButtons.forEach(button => {
+        button.parentElement.classList.remove('active');
       });
     });
   }

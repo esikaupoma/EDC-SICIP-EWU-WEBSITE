@@ -1,0 +1,54 @@
+<div class="calendar-container">
+    <!-- Sidebar: year controls and months -->
+    <div class="sidebar">
+        <div class="years">
+            <i class="fa-solid fa-chevron-left year-btn prev-year"></i>
+            <span id="year" class="year">2024</span>
+            <i class="fa-solid fa-chevron-right year-btn next-year"></i>
+        </div>
+        <ul class="months">
+            <li data-month="0">January</li>
+            <li data-month="1">February</li>
+            <li data-month="2">March</li>
+            <li data-month="3">April</li>
+            <li data-month="4">May</li>
+            <li data-month="5">June</li>
+            <li data-month="6">July</li>
+            <li data-month="7">August</li>
+            <li data-month="8">September</li>
+            <li data-month="9">October</li>
+            <li data-month="10">November</li>
+            <li data-month="11">December</li>
+        </ul>
+    </div>
+
+    <!-- Main Calendar Section -->
+    <div class="calendar">
+        <div class="month">
+            <h2 id="month-name">January</h2>
+            <div class="days">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+            </div>
+            <div class="dates" id="dates">
+                <!-- Dynamically generated date cells go here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Section -->
+    <div class="event">
+        <h2>Our Events</h2>
+        <div class="event-list" id="event-list">
+            <!-- Event items dynamically inserted by JavaScript -->
+        </div>
+    </div>
+</div>
+
+
+

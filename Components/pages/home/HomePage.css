@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 /*-------------------- Main Content ---------------------------------*/
 main {
     margin-top: 100px;
@@ -5,11 +6,12 @@ main {
 
 #ewuHome {
     position: relative;
-    height: 65vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 #ewuImage {
@@ -30,7 +32,7 @@ main {
 
 .presentation-message h1 {
     font-size: 4em;
-    margin: 0;
+    padding: 4px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -40,39 +42,32 @@ main {
 
 }
 
-
-
-
-
 /* ---------------------------- ABOUT EDC SICIP --------------------------------*/
 .edc-sicip {
-    margin: 50px 60px;
-    /* border: 1px solid black; */
-    padding: 0px 220px;
+    margin: 50px 200px;
 }
 
 .title-class {
-    border-bottom: 4px solid #182e59;
+    border-bottom: 4px solid var(--primary-color);
     margin-bottom: 20px;
 }
 
 .title-class h2 {
     margin: 0;
-    /* Remove default margin */
 }
 
 #sicip-title {
     display: inline-block;
     padding: 0 18px;
-    color: #fff;
-    background: #182e59;
+    color: var(--text-color);
+    background: var(--primary-color);
     position: relative;
 }
 
 #sicip-title:before {
     content: "";
     border-right: 20px solid transparent;
-    border-bottom: 40px solid #182e59;
+    border-bottom: 40px solid var(--primary-color);
     position: absolute;
     right: -20px;
     top: 0;
@@ -89,7 +84,6 @@ main {
     width: 100%;
     padding: 20px;
     background: linear-gradient(to right, #f3f4f6, #e5e7eb);
-    /* soft gray gradient */
     box-sizing: border-box;
     margin-bottom: 30px;
 }
@@ -102,12 +96,19 @@ main {
 }
 
 .carousel {
-    flex: 2;
     position: relative;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    height: 100%;
 }
 
 .slideshow-container {
@@ -118,12 +119,14 @@ main {
 
 .slides {
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 .slides img {
     width: 100%;
-    height: auto;
-    /* border-radius: 10px; */
+    height: 100%;
+    object-fit: cover;
 }
 
 .fade {
@@ -228,26 +231,29 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .button {
-    font-size: 14px;
-    padding: 8px 12px;
-    background-color: hsl(226, 56%, 27%);
-    color: white;
+    width: 140px;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #546b85;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-size: 15px;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
 }
 
 .button:hover {
-    background-color: #2dbb02;
-    color: #ffffff;
-    outline: 1px solid white;
+    background-color: var(--primary-color);
+    border: 1px solid white;
 }
-
-
-
 
 /*------------------------------------ info boxes------------------------------ */
 #valueProposition-section {
@@ -262,13 +268,16 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .info-box {
     padding: 20px 15px;
     text-align: center;
-    width: calc(20% - 10px);
+    width: calc(25% - 15px);
     border-radius: 0px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -365,7 +374,7 @@ main {
     text-align: center;
     padding: 40px;
     /* background-color: #8fb6e6; */
-    background-image: url('../Resources/EDC_Members/MemberPicturebackground.jpg');
+    background-image: url('Resources/images/EDC_Members/MemberPicturebackground.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -388,7 +397,6 @@ main {
     display: inline-block;
     width: 220px;
     padding: 50px 20px 40px;
-    /* top, left/right, bottom */
     background-color: #f4f4f4;
     border-radius: 10px;
     text-align: center;
@@ -420,6 +428,10 @@ main {
     font-size: 15px;
     color: #2114dd;
     margin: 50px 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .details-btn {
@@ -449,12 +461,11 @@ main {
 }
 
 .title-class {
-    border-bottom: 4px solid #182e59;
+    border-bottom: 4px solid var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin-bottom: 20px; */
-
+    margin: 0 auto;
 }
 
 .title-class h2 {
@@ -479,45 +490,45 @@ main {
 }
 
 
-/* Carousel Styling */
-.carousel {
+/* Notice Board Carousel Styling */
+.notice-carousel {
     position: relative;
     overflow: hidden;
-    /* Ensures items outside container width are hidden */
+    height: 244px;
     width: 100%;
-    /* Adjust width as necessary */
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-track {
+.notice-carousel-track {
     display: flex;
     transition: transform 0.5s ease;
+    gap: 20px;
+    height: 100%;
 }
 
 .notice-item {
     position: relative;
-    min-width: 250px;
-    margin: 5px;
+    width: 300px;
+    height: 244px;
+    flex: 0 0 auto;
     text-align: center;
     background-color: #182e59;
     overflow: hidden;
-    /* Prevents overflow when zooming */
-    /* border: 1px solid rgb(168, 168, 168); */
+    border-radius: 8px;
 }
 
-.notice-item img {
+.notice-item div img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     transition: transform 0.3s ease;
-
 }
 
 .notice-item:hover img {
     transform: scale(1.1);
-    /* Zoom in the image */
 }
 
-/* Pseudo-element for dark overlay */
 .notice-item::after {
     content: "";
     position: absolute;
@@ -527,26 +538,18 @@ main {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    /* Initially hidden */
     transition: opacity 0.3s ease;
 }
 
 .notice-item:hover::after {
     opacity: 1;
-
 }
 
 .caption {
     margin: 6px 0;
     font-size: 14px;
     color: #f3f576;
-
-}
-
-.title-class {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    padding: 0 10px;
 }
 
 .carousel-buttons {
@@ -571,4 +574,226 @@ main {
 
 .next-btn {
     margin-left: 10px;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .presentation-message h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .presentation-message p {
+        font-size: 1.5em;
+    }
+
+    .edc-sicip {
+        margin: 50px 100px;
+    }
+
+    .edc-vision {
+        margin: 50px 100px;
+        padding: 0px 100px;
+    }
+
+    .notice-board {
+        margin: 50px 100px;
+        padding: 0px 100px;
+    }
+
+    /* Carousel responsive styles */
+    .carousel-container {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .carousel {
+        flex: 1.5;
+    }
+
+    .admission {
+        flex: 1;
+    }
+
+    .side-box h3 {
+        font-size: 18px;
+    }
+
+    .side-box p {
+        font-size: 14px;
+    }
+
+    .button {
+        width: 120px;
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .info-box {
+        width: calc(33.33% - 14px);
+    }
+
+    .carousel {
+        max-width: 900px;
+    }
+
+    .notice-item {
+        min-width: 220px;
+    }
+
+    .notice-item img {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .info-box {
+        width: calc(50% - 10px);
+    }
+    .team-box {
+        gap: 80px;
+        padding-top: 70px;
+    }
+
+    .member {
+        margin: 20px 0;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .edc-sicip {
+        margin: 20px 30px;
+    }
+
+    .edc-vision {
+        margin: 20px 30px;
+        padding: 0px 30px;
+    }
+
+    .notice-board {
+        margin: 24px 16px;
+        padding: 0px 10px;
+    }
+
+    /* Carousel responsive styles */
+    .carousel-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .carousel {
+        width: 100%;
+        aspect-ratio: 16/9;
+        padding: 0;
+    }
+
+
+    .admission {
+        width: 100%;
+    }
+
+    .side-box-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .side-box {
+        flex: 1;
+        min-width: 280px;
+        max-width: 400px;
+    }
+
+    .side-box h3 {
+        font-size: 20px;
+    }
+
+    .side-box p {
+        font-size: 15px;
+    }
+
+    .button {
+        width: 140px;
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .info-boxes {
+        gap: 15px;
+    }
+
+    .team-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+        padding-top: 70px;
+    }
+
+    .member {
+        margin: 20px 0;
+    }
+
+    .notice-item {
+        min-width: 200px;
+    }
+
+    .notice-item img {
+        height: 140px;
+    }
+
+    .caption {
+        font-size: 13px;
+    }
+}
+
+/* Event Calendar Section */
+.event-calendar-section {
+    margin: 50px 60px;
+    padding: 0px 220px;
+}
+
+.event-calendar-section .title-class {
+    border-bottom: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.event-calendar-section .title-class h2 {
+    margin: 0;
+}
+
+#calendar-title {
+    display: inline-block;
+    padding: 0 18px;
+    color: #fff;
+    background: #182e59;
+    position: relative;
+}
+
+#calendar-title:before {
+    content: "";
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #182e59;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+@media screen and (max-width: 1300px) {
+    .event-calendar-section {
+        margin: 50px 100px;
+        padding: 0px 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .event-calendar-section {
+        margin: 20px 30px;
+        padding: 0px 30px;
+    }
 }

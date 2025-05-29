@@ -9,6 +9,16 @@ class HomePage extends HTMLElement {
 
     shadow.innerHTML = `<style>${css}</style>${html}`;
 
+    const buttons = shadow.querySelectorAll('button[data-page]');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const page = button.getAttribute('data-page');
+        window.dispatchEvent(new CustomEvent('navigate', {
+          detail: { page }
+        }));
+      });
+    });
+
     // Slideshow functionality
     let slideIndex = 0;
     let slideshowInterval;
@@ -62,22 +72,62 @@ class HomePage extends HTMLElement {
     prevBtn?.addEventListener('click', () => changeSlide(-1));
     nextBtn?.addEventListener('click', () => changeSlide(1));
 
-    // OPTIONAL: Notice board carousel
-    const track = shadow.querySelector('.carousel-track');
+    // Notice board carousel functionality
+    const track = shadow.querySelector('.notice-carousel-track');
     const prevNoticeBtn = shadow.querySelector('.prev-btn');
     const nextNoticeBtn = shadow.querySelector('.next-btn');
+    const noticeItems = shadow.querySelectorAll('.notice-item');
+    let currentIndex = 0;
+    const itemWidth = noticeItems[0]?.offsetWidth + 20; // Adjust for item margin
+    const maxIndex = noticeItems.length - Math.floor(track?.offsetWidth / itemWidth);
 
-    if (track && prevNoticeBtn && nextNoticeBtn) {
-      const scrollStep = 300;
-
-      prevNoticeBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-      });
-
-      nextNoticeBtn.addEventListener('click', () => {
-        track.scrollBy({ left: scrollStep, behavior: 'smooth' });
-      });
+    function updateCarousel() {
+      if (!track) return;
+      const newPosition = -currentIndex * itemWidth;
+      track.style.transform = `translateX(${newPosition}px)`;
     }
+
+    // Mouse drag functionality
+    let isMouseDown = false;
+    let startX;
+    let scrollLeft;
+
+    track?.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track?.addEventListener('mouseleave', () => {
+      isMouseDown = false;
+    });
+
+    track?.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+
+    track?.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 2;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Button navigation
+    nextNoticeBtn?.addEventListener('click', () => {
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    prevNoticeBtn?.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
   }
 }
 

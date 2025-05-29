@@ -8,9 +8,6 @@
       </div>
   </section>
 
-
-
-
   <!----------------------------------- About EDC SICIP Section ----------------------------------->
   <section class="edc-sicip">
       <div class="title-class">
@@ -68,7 +65,7 @@
                       <h3>Fall 2024 Admission</h3>
                       <p>Graduate Diploma in Leather, Leather Goods, and Footwear Management</p>
                       <div class="button-container">
-                          <a href="../HTML/applyOnline.html" class="button" target="_blank">Apply Now</a>
+                          <button class="button" data-page="applyOnline">Apply Now</button>
                           <a href="../Resources/MainImages/flyer.jpg" class="button" target="_blank">Flyer</a>
                       </div>
                   </div>
@@ -76,8 +73,6 @@
           </div>
       </div>
   </section>
-
-
 
   <!----------------------------------- Info Boxes section----------------------------------->
   <section id="valueProposition-section" class="section">
@@ -131,10 +126,10 @@
   </section>
 
 
-  <!----------------------------------- EDC’s Vision section----------------------------------->
+  <!----------------------------------- EDC's Vision section----------------------------------->
   <section class="edc-vision">
       <div class="title-class">
-          <h2><span id="vision-title">EDC’s Vision</span></h2>
+          <h2><span id="vision-title">EDC's Vision</span></h2>
       </div>
       <p class="vision-description">
           To serve as a training hub to produce globally competitive skilled executives and entrepreneurs for
@@ -202,9 +197,8 @@
           </div>
       </div>
 
-      <!-- Add an outer carousel container -->
-      <div class="carousel">
-          <div class="carousel-track">
+      <div class="notice-carousel">
+          <div class="notice-carousel-track">
               <a href="noticeboard.html" class="notice-item">
                   <div>
                       <img src="Resources/images/MainImages/ewu.jpg" alt="Notice 1">
@@ -220,31 +214,24 @@
               </a>
               <a href="../HTML/noticeBoard.html" class="notice-item">
                   <div>
-                      <img src="../Resources/NoticeBoard/ADB_visit.jpg" alt="Notice 2">
+                      <img src="Resources/images/NoticeBoard/ADB_visit.jpg" alt="Notice 2">
                   </div>
                   <p class="caption">Visits of ADB team</p>
               </a>
               <a href="../HTML/noticeBoard.html" class="notice-item">
                   <div>
-                      <img src="../Resources/Carousel/c4.jpg" alt="Notice 2">
+                      <img src="Resources/images/Carousel/c4.jpg" alt="Notice 2">
                   </div>
                   <p class="caption">EDC-SICIP Orientation Program of Batch 1 and 2</p>
               </a>
               <a href="../HTML/noticeBoard.html" class="notice-item">
                   <div>
-                      <img src="../Resources/MainImages/flyer.jpg" alt="Notice 2">
+                      <img src="Resources/images/MainImages/flyer.jpg" alt="Notice 2">
                   </div>
                   <p class="caption">Advertisement of Batch 3, 4 in GDLFM Program</p>
               </a>
               <a href="../HTML/noticeBoard.html" class="notice-item">
                   <div>
-                      <img src="../Resources/MainImages/ewu1.jpg" alt="Notice 2">
-                  </div>
-                  <p class="caption">Graduate Diploma in Leather, Leather Goods & Footwear Management for
-                      batch-3,4</p>
-              </a>
-              <a href="../HTML/noticeBoard.html" class="notice-item">
-                  <div>
                       <img src="Resources/images/MainImages/ewu1.jpg" alt="Notice 2">
                   </div>
                   <p class="caption">Graduate Diploma in Leather, Leather Goods & Footwear Management for
@@ -257,9 +244,23 @@
                   <p class="caption">Graduate Diploma in Leather, Leather Goods & Footwear Management for
                       batch-3,4</p>
               </a>
-              <!-- Add more notice items as needed -->
+              <a href="../HTML/noticeBoard.html" class="notice-item">
+                  <div>
+                      <img src="Resources/images/MainImages/ewu1.jpg" alt="Notice 2">
+                  </div>
+                  <p class="caption">Graduate Diploma in Leather, Leather Goods & Footwear Management for
+                      batch-3,4</p>
+              </a>
           </div>
       </div>
+  </section>
+
+  <!----------------------------------- Event Calendar Section----------------------------------->
+  <section class="event-calendar-section">
+      <div class="title-class">
+          <h2><span id="calendar-title">Event Calendar</span></h2>
+      </div>
+      <event-calendar></event-calendar>
   </section>
 
 </main>

@@ -273,6 +273,10 @@ footer a {
         max-width: none;
     }
 
+    .contact-section p {
+        font-size: 24px;
+    }
+
     .footer-container h4 {
         font-size: 14px;
         padding-bottom: 4px;
@@ -333,6 +337,10 @@ footer a {
         font-size: 24px;
         text-align: center;
         padding-bottom: 8px;
+    }
+
+    .contact-section p {
+        font-size: 18px;
     }
 
     .icons div {

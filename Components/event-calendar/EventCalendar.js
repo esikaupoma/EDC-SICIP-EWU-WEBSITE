@@ -29,6 +29,8 @@ class EventCalendar extends HTMLElement {
         // Add event listeners for navigation
         shadow.querySelector('.prev-year').addEventListener('click', () => this.prevYear());
         shadow.querySelector('.next-year').addEventListener('click', () => this.nextYear());
+        shadow.querySelector('.prev-month').addEventListener('click', () => this.prevMonth());
+        shadow.querySelector('.next-month').addEventListener('click', () => this.nextMonth());
         
         // Add event listeners for month selection
         const monthItems = shadow.querySelectorAll('.months li');
@@ -233,6 +235,14 @@ class EventCalendar extends HTMLElement {
     prevYear() {
         this.currentYear--;
         this.loadCalendar(this.currentYear, this.currentMonth);
+    }
+
+    nextMonth() {
+        this.setMonth(this.currentMonth + 1);
+    }
+
+    prevMonth() {
+        this.setMonth(this.currentMonth - 1);
     }
 }
 

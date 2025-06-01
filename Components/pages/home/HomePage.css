@@ -270,15 +270,15 @@ main {
     justify-content: center;
     gap: 20px;
     padding: 0 20px;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
 .info-box {
     padding: 20px 15px;
     text-align: center;
-    width: calc(25% - 15px);
+    width: calc(20% - 100px);
     border-radius: 0px;
+    min-width: 230px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -577,7 +577,7 @@ main {
 }
 
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
     .presentation-message h1 {
         font-size: 3em;
         margin: 0;
@@ -599,6 +599,25 @@ main {
     .notice-board {
         margin: 50px 100px;
         padding: 0px 100px;
+    }
+
+    .title-class {
+        border-bottom: 8px solid var(--primary-color);
+    }
+
+    #sicip-title { 
+        font-size: 18px;
+        padding-bottom: 5px
+    }
+
+    #sicip-title:before { 
+        border-right: 20px solid transparent;
+        border-bottom: 40px solid var(--primary-color);
+    }
+
+    #vision-title {
+        font-size: 18px;
+        padding-bottom: 5px
     }
 
     /* Carousel responsive styles */
@@ -630,7 +649,7 @@ main {
     }
 
     .info-box {
-        width: calc(33.33% - 14px);
+        width: calc(30% - 14px);
     }
 
     .carousel {
@@ -644,21 +663,87 @@ main {
     .notice-item img {
         height: 160px;
     }
+
+    /* Text justification and font size adjustments */
+    .presentation-message p {
+        text-align: center;
+    }
+    p {
+        text-align: justify;
+        font-size: 0.95rem;
+    }
+
+    .sicip-description, .vision-description {
+        font-size: 1em;
+    }
+
+    .info-box p {
+        font-size: 0.9rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .member h3 {
+        font-size: 1rem;
+    }
+
+    .caption {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 992px) {
     .info-box {
-        width: calc(50% - 10px);
+        width: calc(33.3% - 10px);
     }
     .team-box {
-        gap: 80px;
-        padding-top: 70px;
+        gap: 20px;
+        padding-top: 30px;
     }
 
     .member {
+        width: 150px;
         margin: 20px 0;
     }
 
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .member h3 { 
+        font-size: 12px;
+        margin: 10px 0 20px;
+        height: 40px;
+    }
+
+    .details-btn {
+        font-size: 0.8em;
+         padding: 6px 20px;
+    }
+
+    /* Text justification and font size adjustments */
+    p {
+        font-size: 0.9rem;
+    }
+
+    .sicip-description, .vision-description {
+        font-size: 0.9em;
+    }
+
+    .info-box p {
+        font-size: 0.85rem;
+    }
+
+    .info-box h3 {
+        font-size: 1rem;
+    }
+
+    .caption {
+        font-size: 0.85rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -687,7 +772,6 @@ main {
         aspect-ratio: 16/9;
         padding: 0;
     }
-
 
     .admission {
         width: 100%;
@@ -728,15 +812,35 @@ main {
         gap: 15px;
     }
 
+    .meet-our-teams-container {
+        padding: 0;
+        margin: 0;
+    }
+
     .team-box {
-        flex-direction: column;
-        align-items: center;
-        gap: 80px;
-        padding-top: 70px;
+        gap: 20px;
+        padding-top: 30px;
     }
 
     .member {
+        width: 100px;
         margin: 20px 0;
+    }
+
+    .member-photo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .member h3 { 
+        font-size: 12px;
+        margin: 0px 0 30px;
+        height: 0px;
+    }
+
+    .details-btn {
+        font-size: 0.7em;
+        padding: 6px 20px;
     }
 
     .notice-item {
@@ -749,6 +853,27 @@ main {
 
     .caption {
         font-size: 13px;
+    }
+
+    /* Text justification and font size adjustments */
+    p {
+        font-size: 0.8rem;
+    }
+
+    .sicip-description, .vision-description {
+        font-size: 0.95em;
+    }
+
+    .info-box p {
+        font-size: 0.8rem;
+    }
+
+    .info-box h3 {
+        font-size: 0.95rem;
+    }
+
+    .caption {
+        font-size: 0.8rem;
     }
 }
 

@@ -340,11 +340,20 @@
     height: 5px;
   }
   .months {
-    align-items: center;
+    display: none;
   }
-  .months li {
+  .month-btn {
+    display: inline-block !important;
+    font-size: 1.4rem;
+    padding: 0 10px;
+  }
+  .month-header {
+    margin-bottom: 20px;
+  }
+  .month-header h2 {
+    margin: 0;
+    min-width: 120px;
     text-align: center;
-    width: 100%;
   }
 }
 
@@ -379,4 +388,24 @@
   .year {
     font-size: 1.2rem;
   }
+}
+
+.month-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.month-btn {
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.month-btn:hover {
+    color: #007bff;
 }

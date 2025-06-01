@@ -747,6 +747,10 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+    .presentation-message h1{
+        font-size: 2.5em;
+    }
+
     .edc-sicip {
         margin: 20px 30px;
     }

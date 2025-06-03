@@ -1,0 +1,55 @@
+.vm-container {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+}
+
+.title-class {
+    border-bottom: 4px solid #182e59;
+    margin: 20px 0px;
+}
+
+.title-class h2 {
+    margin: 0;
+    padding: 5px 18px;
+    color: #fff;
+    background: #182e59;
+    display: inline-block;
+    position: relative;
+}
+
+.title-class h2::before {
+    content: "";
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #182e59;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+.vm-section {
+    margin-bottom: 30px;
+}
+
+.vm-section h3 {
+    font-size: 22px;
+    color: #354268;
+    margin-bottom: 12px;
+}
+
+.vm-section p,
+.vm-section ul {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.vm-section ul {
+    padding-left: 20px;
+}
+
+.vm-section ul li {
+    margin-bottom: 12px;
+}

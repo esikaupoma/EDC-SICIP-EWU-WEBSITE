@@ -1,0 +1,148 @@
+body {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+}
+
+
+
+/* Director Section */
+.director-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 30px;
+    text-align: left;
+    padding: 20px;
+    background-color: #435d73;
+}
+
+.director-photo {
+    height: 250px;
+    object-fit: cover;
+}
+
+.director-info {
+    margin: 0;
+    align-self: flex-end;
+}
+
+.director-info h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin: 0px;
+}
+
+.director-info p {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0px;
+}
+
+.title-class {
+    border-bottom: 4px solid #182e59;
+    margin: 20px 0px;
+}
+
+.title-class h2 {
+    margin: 0;
+    padding: 5px 18px;
+    color: #fff;
+    background: #182e59;
+    display: inline-block;
+    position: relative;
+}
+
+.title-class h2::before {
+    content: "";
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #182e59;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+.message-section p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Responsive Media Queries */
+/* ------------------------------------ */
+
+/* For tablets and smaller laptops */
+@media (max-width: 992px) {
+    .director-section {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        text-align: left;
+    }
+
+    .director-info {
+        align-self: center;
+    }
+
+    .director-info h2 {
+        font-size: 20px;
+    }
+
+    .director-info p {
+        font-size: 15px;
+    }
+
+    .message-section h3 {
+        font-size: 24px;
+    }
+
+    .message-section p {
+        font-size: 16px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 10px;
+        margin: 20px 10px;
+    }
+
+    .director-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .director-photo {
+        height: auto;
+        width: 100%;
+    }
+
+    .director-info {
+        align-self: center;
+    }
+
+    .director-info h2 {
+        font-size: 15px;
+    }
+
+    .director-info p {
+        font-size: 15px;
+    }
+
+    .message-section h3 {
+        font-size: 20px;
+    }
+
+    .message-section p {
+        font-size: 15px;
+    }
+}

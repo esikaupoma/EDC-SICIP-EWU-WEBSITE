@@ -4,19 +4,19 @@ header {
     position: fixed;
     z-index: 1000;
     top: 0;
-    left: 0; 
+    left: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100vw;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .top-header {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .top-header span {
@@ -28,7 +28,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 32px;
+    padding: 0px 42px;
     gap: 8px;
 }
 
@@ -51,7 +51,7 @@ header {
 
 #ewulogo {
     width: 64px;
-    height: 39px;
+    height: 40px;
 }
 
 .logo:hover {
@@ -61,7 +61,7 @@ header {
 /* =========== Navigation Bar  ========= */
 
 nav {
-    padding: 8px 32px;
+    padding: 0px 60px;
 }
 
 .nav-bar {
@@ -72,7 +72,7 @@ nav {
 }
 
 .nav-item {
-  position: relative;
+    position: relative;
 }
 
 button {
@@ -86,8 +86,8 @@ button {
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 4px; 
-    padding: 4px 8px; 
+    gap: 4px;
+    padding: 2px 6px;
 }
 
 button::after {
@@ -107,19 +107,11 @@ button:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-.nav-item-dropdown {
-
-}
-
-.nav-item-dropdown button{
-    
-}
-
 .dropdown-menu {
     list-style: none;
     position: absolute;
     z-index: 1001;
-    min-width: 100%;
+    min-width: 10%;
     padding: 8px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -138,8 +130,8 @@ button:hover::after {
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
-  transform: scaleY(1);
-  opacity: 1;
+    transform: scaleY(1);
+    opacity: 1;
 }
 
 .dropdown-item button {
@@ -157,7 +149,7 @@ button:hover::after {
     transform: scale(1.2);
 }
 
-.hamburger-menu .material-symbols-outlined{
+.hamburger-menu .material-symbols-outlined {
     font-size: 32px;
 }
 
@@ -175,9 +167,9 @@ button:hover::after {
 .notice-content {
     display: inline-block;
     padding-left: 100%;
-    animation: scroll-left 30s linear infinite;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    animation: scroll-left 35s linear infinite;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .notice-bar:hover .notice-content,
@@ -206,8 +198,8 @@ button:hover::after {
 
     button {
         font-size: 12px;
-        gap: 2px; 
-        padding: 2px 4px; 
+        gap: 2px;
+        padding: 2px 4px;
     }
 
     .notice-content {
@@ -217,10 +209,6 @@ button:hover::after {
     }
 
 }
-
-/* Add this to your existing CSS - modify the mobile media query section */
-
-/* Add this to your existing CSS - modify the mobile media query section */
 
 @media screen and (max-width: 768px) {
     #siciplogo {
@@ -277,8 +265,8 @@ button:hover::after {
 
     button {
         font-size: 18px;
-        gap: 4px; 
-        padding: 4px 8px; 
+        gap: 4px;
+        padding: 4px 8px;
     }
 
     .nav-item {
@@ -288,7 +276,7 @@ button:hover::after {
 
     .nav-item-dropdown {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -299,14 +287,14 @@ button:hover::after {
     }
 
     .dropdown-menu {
-        position: static; 
+        position: static;
         width: 100%;
         min-width: auto;
         padding: 0;
-        background-color: transparent; 
+        background-color: transparent;
         margin-top: 0;
         max-height: 0;
-        transform: scaleY(0); 
+        transform: scaleY(0);
         transform-origin: top;
         transition: max-height 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
         opacity: 0;
@@ -315,10 +303,10 @@ button:hover::after {
 
     .nav-item-dropdown:hover .dropdown-menu,
     .nav-item-dropdown.active .dropdown-menu {
-        max-height: 200px; 
+        max-height: 200px;
         transform: scaleY(1);
         opacity: 1;
-        margin-top: 8px; 
+        margin-top: 8px;
     }
 
     .dropdown-item {

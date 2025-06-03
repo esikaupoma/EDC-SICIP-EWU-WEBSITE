@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 /*-------------------- Main Content ---------------------------------*/
 main {
     margin-top: 100px;
+}
+
+
+/* for all justified text use this class */
+.text-justify {
+    text-align: justify;
 }
 
 #ewuHome {
@@ -31,16 +38,45 @@ main {
 }
 
 .presentation-message h1 {
-    font-size: 4em;
+    font-size: 5em;
     padding: 4px;
+    margin: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .presentation-message p {
     font-size: 2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0px;
 
 }
+
+
+/* ---------------------------- TITLE (For Reuse)--------------------------------*/
+
+.title-class {
+    border-bottom: 4px solid #182e59;
+    margin-bottom: 20px;
+}
+
+.title-class h2 {
+    margin: 0;
+    padding: 0 18px;
+    color: #fff;
+    background: #182e59;
+    display: inline-block;
+    position: relative;
+}
+
+.title-class h2::before {
+    content: "";
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #182e59;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
 
 /* ---------------------------- ABOUT EDC SICIP --------------------------------*/
 .edc-sicip {
@@ -52,26 +88,6 @@ main {
     margin-bottom: 20px;
 }
 
-.title-class h2 {
-    margin: 0;
-}
-
-#sicip-title {
-    display: inline-block;
-    padding: 0 18px;
-    color: var(--text-color);
-    background: var(--primary-color);
-    position: relative;
-}
-
-#sicip-title:before {
-    content: "";
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid var(--primary-color);
-    position: absolute;
-    right: -20px;
-    top: 0;
-}
 
 .sicip-description {
     font-size: 1.2em;
@@ -214,17 +230,19 @@ main {
     background-color: #b3d9f8;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 30px 10px;
+    padding: 30px 35px;
 }
 
 .side-box h3 {
     font-size: 22px;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .side-box p {
     font-size: 16px;
     margin-bottom: 15px;
+    color: #333;
 }
 
 .button-container {
@@ -238,10 +256,10 @@ main {
     width: 140px;
     display: inline-block;
     padding: 8px 20px;
-    background-color: #546b85;
+    background-color: var(--primary-color);
     color: #fff;
     border: 1px solid transparent;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     text-decoration: none;
     font-size: 15px;
     transition: background-color 0.5s ease, border-color 0.5s ease;
@@ -251,8 +269,9 @@ main {
 }
 
 .button:hover {
-    background-color: var(--primary-color);
-    border: 1px solid white;
+    background-color: #2dbb02;
+    color: #ffffff;
+    outline: 1px solid white;
 }
 
 /*------------------------------------ info boxes------------------------------ */
@@ -338,28 +357,6 @@ main {
     margin-bottom: 20px;
 }
 
-.title-class h2 {
-    margin: 0;
-    /* Remove default margin */
-}
-
-#vision-title {
-    display: inline-block;
-    /* font-weight: bold; */
-    padding: 0 18px;
-    color: #fff;
-    background: #182e59;
-    position: relative;
-}
-
-#vision-title:before {
-    content: "";
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid #182e59;
-    position: absolute;
-    right: -20px;
-    top: 0;
-}
 
 .vision-description {
     font-size: 1.2em;
@@ -445,12 +442,8 @@ main {
 }
 
 .details-btn:hover {
-    /* background-color: #f4f4f4;
-    outline: 2px solid #2114dd;
-    color: #2114dd; */
     opacity: 0.8;
 }
-
 
 
 /* ---------------------------NOTICE BOARD-------------------------------- */
@@ -461,72 +454,51 @@ main {
 }
 
 .title-class {
-    border-bottom: 4px solid var(--primary-color);
+    border-bottom: 4px solid #182e59;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
+    /* margin-bottom: 20px; */
+
 }
 
 .title-class h2 {
     margin: 0;
 }
 
-#notice-title {
-    display: inline-block;
-    padding: 0 18px;
-    color: #fff;
-    background: #182e59;
-    position: relative;
-}
-
-#notice-title:before {
-    content: "";
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid #182e59;
-    position: absolute;
-    right: -20px;
-    top: 0;
-}
-
-
-/* Notice Board Carousel Styling */
-.notice-carousel {
+/* Carousel Styling */
+.carousel {
     position: relative;
     overflow: hidden;
-    height: 244px;
     width: 100%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .notice-carousel-track {
     display: flex;
     transition: transform 0.5s ease;
-    gap: 20px;
-    height: 100%;
 }
 
 .notice-item {
     position: relative;
-    width: 300px;
-    height: 244px;
-    flex: 0 0 auto;
+    min-width: 250px;
+    margin: 5px;
     text-align: center;
     background-color: #182e59;
     overflow: hidden;
-    border-radius: 8px;
+    /* Prevents overflow when zooming */
 }
 
-.notice-item div img {
+.notice-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     transition: transform 0.3s ease;
+
 }
 
 .notice-item:hover img {
     transform: scale(1.1);
+    /* Zoom in the image */
 }
 
 .notice-item::after {
@@ -538,18 +510,26 @@ main {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
+    /* Initially hidden */
     transition: opacity 0.3s ease;
 }
 
 .notice-item:hover::after {
     opacity: 1;
+
 }
 
 .caption {
     margin: 6px 0;
     font-size: 14px;
     color: #f3f576;
-    padding: 0 10px;
+
+}
+
+.title-class {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .carousel-buttons {
@@ -577,6 +557,8 @@ main {
 }
 
 
+
+
 @media screen and (max-width: 1400px) {
     .presentation-message h1 {
         font-size: 3em;
@@ -601,16 +583,12 @@ main {
         padding: 0px 100px;
     }
 
-    .title-class {
-        border-bottom: 8px solid var(--primary-color);
-    }
-
-    #sicip-title { 
+    #sicip-title {
         font-size: 18px;
         padding-bottom: 5px
     }
 
-    #sicip-title:before { 
+    #sicip-title:before {
         border-right: 20px solid transparent;
         border-bottom: 40px solid var(--primary-color);
     }
@@ -668,12 +646,14 @@ main {
     .presentation-message p {
         text-align: center;
     }
+/* 
     p {
         text-align: justify;
         font-size: 0.95rem;
-    }
+    } */
 
-    .sicip-description, .vision-description {
+    .sicip-description,
+    .vision-description {
         font-size: 1em;
     }
 
@@ -698,6 +678,7 @@ main {
     .info-box {
         width: calc(33.3% - 10px);
     }
+
     .team-box {
         gap: 20px;
         padding-top: 30px;
@@ -713,7 +694,7 @@ main {
         height: 100px;
     }
 
-    .member h3 { 
+    .member h3 {
         font-size: 12px;
         margin: 10px 0 20px;
         height: 40px;
@@ -721,15 +702,16 @@ main {
 
     .details-btn {
         font-size: 0.8em;
-         padding: 6px 20px;
+        padding: 6px 20px;
     }
 
-    /* Text justification and font size adjustments */
+    /* Text justification and font size adjustments */ 
     p {
         font-size: 0.9rem;
     }
 
-    .sicip-description, .vision-description {
+    .sicip-description,
+    .vision-description {
         font-size: 0.9em;
     }
 
@@ -747,7 +729,7 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    .presentation-message h1{
+    .presentation-message h1 {
         font-size: 2.5em;
     }
 
@@ -836,7 +818,7 @@ main {
         height: 75px;
     }
 
-    .member h3 { 
+    .member h3 {
         font-size: 12px;
         margin: 0px 0 30px;
         height: 0px;
@@ -864,7 +846,8 @@ main {
         font-size: 0.8rem;
     }
 
-    .sicip-description, .vision-description {
+    .sicip-description,
+    .vision-description {
         font-size: 0.95em;
     }
 

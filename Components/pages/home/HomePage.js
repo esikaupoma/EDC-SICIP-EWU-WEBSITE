@@ -72,8 +72,8 @@ class HomePage extends HTMLElement {
     prevBtn?.addEventListener('click', () => changeSlide(-1));
     nextBtn?.addEventListener('click', () => changeSlide(1));
 
-    // Notice board carousel functionality
-    const track = shadow.querySelector('.notice-carousel-track');
+    // ---------------Notice board carousel functionality-------------------------//
+    const track = shadow.querySelector('.notice-carousel');
     const prevNoticeBtn = shadow.querySelector('.prev-btn');
     const nextNoticeBtn = shadow.querySelector('.next-btn');
     const noticeItems = shadow.querySelectorAll('.notice-item');

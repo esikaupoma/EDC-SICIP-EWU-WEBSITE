@@ -10,75 +10,53 @@
 </head>
 
 <body>
-    <div class="calendar-container">
-
-        <!-- Sidebar: year controls and months -->
-        <div class="sidebar">
-            <div class="years">
-                <i class="fa-solid fa-chevron-left year-btn" onclick="prevYear()"></i>
-                <span class="year" id="year">2020</span>
-                <i class="fa-solid fa-chevron-right year-btn" onclick="nextYear()"></i>
-            </div>
-            <ul class="months">
-                <li onclick="setMonth(0)">January</li>
-                <li onclick="setMonth(1)">February</li>
-                <li onclick="setMonth(2)">March</li>
-                <li onclick="setMonth(3)">April</li>
-                <li onclick="setMonth(4)">May</li>
-                <li onclick="setMonth(5)">June</li>
-                <li onclick="setMonth(6)" class="active">July</li>
-                <li onclick="setMonth(7)">August</li>
-                <li onclick="setMonth(8)">September</li>
-                <li onclick="setMonth(9)">October</li>
-                <li onclick="setMonth(10)">November</li>
-                <li onclick="setMonth(11)">December</li>
-            </ul>
-        </div>
-
-        <!-- Main Calendar Section -->
-        <div class="calendar">
-            <div class="month">
-                <h2 id="month-name">July</h2>
-                <div class="days">
-                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+    <div class="calendar-wrapper">
+        <div class="calendar-container">
+            <div class="sidebar">
+                <div class="years">
+                    <i class="fa-solid fa-chevron-left year-btn" style="color: #3f51b5;" onclick="prevYear()"></i>
+                    <span class="year" id="year">2020</span>
+                    <i class="fa-solid fa-chevron-right year-btn" style="color: #3f51b5;" onclick="nextYear()"></i>
                 </div>
-                <div class="dates" id="dates">
-                    <!-- Dynamically generated date cells go here -->
-                    <!-- Example date structure:
-                    <div class="date current-date">
-                        14
-                        <div class="event-dots">
-                            <span class="event-dot red"></span>
-                            <span class="event-dot blue"></span>
-                        </div>
+                <ul class="months">
+                    <li onclick="setMonth(0)">January</li>
+                    <li onclick="setMonth(1)">February</li>
+                    <li onclick="setMonth(2)">March</li>
+                    <li onclick="setMonth(3)">April</li>
+                    <li onclick="setMonth(4)">May</li>
+                    <li onclick="setMonth(5)">June</li>
+                    <li onclick="setMonth(6)" class="active">July</li>
+                    <li onclick="setMonth(7)">August</li>
+                    <li onclick="setMonth(8)">September</li>
+                    <li onclick="setMonth(9)">October</li>
+                    <li onclick="setMonth(10)">November</li>
+                    <li onclick="setMonth(11)">December</li>
+                </ul>
+            </div>
+
+            <!-- Main Calendar Section -->
+            <div class="calendar">
+                <div class="month">
+                    <h2 id="month-name">July</h2>
+                    <div class="days">
+                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
                     </div>
-                    -->
+                    <div class="dates" id="dates">
+                        <!-- Dynamically generated date cells go here -->
+                    </div>
                 </div>
             </div>
-        </div>
 
+
+        </div>
         <!-- Event Details Section -->
         <div class="event">
             <h2>Our Events</h2>
             <div class="event-list" id="event-list">
                 <!-- Event items dynamically inserted by JavaScript -->
-                <!-- Example event-item:
-                <div class="event-item red">
-                    <div class="event-date">
-                        <span class="day">14</span>
-                        <span class="month-year">Jul 2020</span>
-                    </div>
-                    <div class="event-details">
-                        <h3>Sample Event Title</h3>
-                        <p><i class="fa-solid fa-location-dot"></i> Venue Name</p>
-                        <p><i class="fa-regular fa-clock"></i> 10:00 AM - 12:00 PM</p>
-                    </div>
-                </div>
-                -->
             </div>
             <p class="no-events" style="display:none;">No events for this date.</p>
         </div>
-
     </div>
 
     <script src="/JS/eventCalendar.js"></script>

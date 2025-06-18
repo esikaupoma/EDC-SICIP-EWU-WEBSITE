@@ -23,30 +23,25 @@ class EventCalendar extends HTMLElement {
 
         // Set initial year display
         shadow.querySelector('#year').textContent = this.currentYear;
-        
+
         this.loadCalendar(this.currentYear, this.currentMonth);
 
         // Add event listeners for navigation
         shadow.querySelector('.prev-year').addEventListener('click', () => this.prevYear());
         shadow.querySelector('.next-year').addEventListener('click', () => this.nextYear());
-        shadow.querySelector('.prev-month').addEventListener('click', () => this.prevMonth());
-        shadow.querySelector('.next-month').addEventListener('click', () => this.nextMonth());
-        
+
         // Add event listeners for month selection
         const monthItems = shadow.querySelectorAll('.months li');
-        monthItems.forEach(item => {
+        monthItems.forEach((item, index) => {
+            if (index === this.currentMonth) {
+                item.classList.add('active');
+            }
             item.addEventListener('click', () => {
-                const month = parseInt(item.getAttribute('data-month'));
-                this.setMonth(month);
-                
-                // Update active state
+                this.setMonth(index);
                 monthItems.forEach(m => m.classList.remove('active'));
                 item.classList.add('active');
             });
         });
-
-        // Set initial active month
-        monthItems[this.currentMonth].classList.add('active');
     }
 
     loadCalendar(year, month) {
@@ -66,7 +61,7 @@ class EventCalendar extends HTMLElement {
             const prevMonth = month === 0 ? 12 : month;
             const prevYear = month === 0 ? year - 1 : year;
             const dateStr = `${prevYear}-${String(prevMonth).padStart(2, '0')}-${String(prevMonthDay).padStart(2, '0')}`;
-            
+
             const dateElement = document.createElement('span');
             dateElement.className = 'date prev-month';
             dateElement.textContent = prevMonthDay;
@@ -92,7 +87,7 @@ class EventCalendar extends HTMLElement {
             const dateElement = document.createElement('span');
             dateElement.className = classes;
             dateElement.innerHTML = `${day}<div class="event-dots">${eventDots}</div>`;
-            
+
             // Add click event listener for the date
             dateElement.addEventListener('click', () => {
                 // Remove selected class from previously selected date
@@ -100,10 +95,10 @@ class EventCalendar extends HTMLElement {
                 if (prevSelected) {
                     prevSelected.classList.remove('selected-date');
                 }
-                
+
                 // Add selected class to clicked date
                 dateElement.classList.add('selected-date');
-                
+
                 // Show events for this date
                 this.showEventsForDate(dateStr);
             });
@@ -119,7 +114,7 @@ class EventCalendar extends HTMLElement {
             const nextMonth = month === 11 ? 1 : month + 2;
             const nextYear = month === 11 ? year + 1 : year;
             const dateStr = `${nextYear}-${String(nextMonth).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-            
+
             const dateElement = document.createElement('span');
             dateElement.className = 'date next-month';
             dateElement.textContent = i;
@@ -235,14 +230,6 @@ class EventCalendar extends HTMLElement {
     prevYear() {
         this.currentYear--;
         this.loadCalendar(this.currentYear, this.currentMonth);
-    }
-
-    nextMonth() {
-        this.setMonth(this.currentMonth + 1);
-    }
-
-    prevMonth() {
-        this.setMonth(this.currentMonth - 1);
     }
 }
 

@@ -72,62 +72,67 @@ class HomePage extends HTMLElement {
     prevBtn?.addEventListener('click', () => changeSlide(-1));
     nextBtn?.addEventListener('click', () => changeSlide(1));
 
-    // ---------------Notice board carousel functionality-------------------------//
-    const track = shadow.querySelector('.notice-carousel');
-    const prevNoticeBtn = shadow.querySelector('.prev-btn');
-    const nextNoticeBtn = shadow.querySelector('.next-btn');
-    const noticeItems = shadow.querySelectorAll('.notice-item');
-    let currentIndex = 0;
-    const itemWidth = noticeItems[0]?.offsetWidth + 20; // Adjust for item margin
-    const maxIndex = noticeItems.length - Math.floor(track?.offsetWidth / itemWidth);
 
-    function updateCarousel() {
-      if (!track) return;
-      const newPosition = -currentIndex * itemWidth;
-      track.style.transform = `translateX(${newPosition}px)`;
-    }
+// ---------------Notice board carousel functionality-------------------------//
 
-    // Mouse drag functionality
-    let isMouseDown = false;
-    let startX;
-    let scrollLeft;
+// ---------------Notice board carousel functionality (Auto-Slide)-------------------------//
 
-    track?.addEventListener('mousedown', (e) => {
-      isMouseDown = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
+const track = document.querySelector('.news-carousel');
+const newsItems = document.querySelectorAll('.news-item');
 
-    track?.addEventListener('mouseleave', () => {
-      isMouseDown = false;
-    });
+let currentIndex = 0;
+const itemWidth = newsItems[0]?.offsetWidth + 20; // Adjust for gap/margin
+const visibleItems = Math.floor(track?.offsetWidth / itemWidth);
+const maxIndex = newsItems.length - visibleItems;
 
-    track?.addEventListener('mouseup', () => {
-      isMouseDown = false;
-    });
+function updateCarousel() {
+  if (!track) return;
+  const newPosition = -currentIndex * itemWidth;
+  track.style.transform = `translateX(${newPosition}px)`;
+}
 
-    track?.addEventListener('mousemove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 2;
-      track.scrollLeft = scrollLeft - walk;
-    });
+// Auto slide every 3 seconds
+let autoSlide = setInterval(() => {
+  currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+  updateCarousel();
+}, 3000);
 
-    // Button navigation
-    nextNoticeBtn?.addEventListener('click', () => {
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
+// Optional: pause on hover
+track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+track.addEventListener('mouseleave', () => {
+  autoSlide = setInterval(() => {
+    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+    updateCarousel();
+  }, 3000);
+});
 
-    prevNoticeBtn?.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    });
+// Optional: Mouse drag scroll (if you still want it)
+let isMouseDown = false;
+let startX;
+let scrollLeft;
+
+track.addEventListener('mousedown', (e) => {
+  isMouseDown = true;
+  startX = e.pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
+
+track.addEventListener('mouseleave', () => {
+  isMouseDown = false;
+});
+
+track.addEventListener('mouseup', () => {
+  isMouseDown = false;
+});
+
+track.addEventListener('mousemove', (e) => {
+  if (!isMouseDown) return;
+  e.preventDefault();
+  const x = e.pageX - track.offsetLeft;
+  const walk = (x - startX) * 2;
+  track.scrollLeft = scrollLeft - walk;
+});
+
   }
 }
 

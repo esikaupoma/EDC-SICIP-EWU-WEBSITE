@@ -32,20 +32,23 @@ body {
 }
 
 /* ========== Typography ========== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--heading-color);
   font-weight: 600;
   line-height: 1.2;
 }
 
-p {
-  margin-bottom: var(--spacing-sm);
-}
 
 a {
   color: var(--primary-color);
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -72,26 +75,10 @@ a:hover {
   background-color: hsl(226, 56%, 22%);
 }
 
-/* ========== Forms ========== might not use it*/
-input, textarea, select {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: var(--spacing-xs);
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  width: 100%;
-  box-sizing: border-box;
-}
+
 
 label {
   display: block;
   margin-bottom: 0.25rem;
   font-weight: 500;
 }
-
-/* ========== Media Queries ========== */
-/* @media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-} */

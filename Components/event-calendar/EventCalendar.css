@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-/* Layout */
+/*--------------------------------- Layout ---------------------------------*/
+
 .calendar-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -18,17 +19,18 @@
 
 .calendar-container {
   display: flex;
-  flex: 2;
+  flex: 1;
   gap: 20px;
   box-sizing: border-box;
-  flex-wrap: wrap;
   background: #f9f9f9;
   border: 1px solid #ccc;
+  flex-wrap: nowrap;
 }
 
-/* Sidebar */
+/*--------------------------------- Sidebar ---------------------------------*/
+
 .sidebar {
-  flex: 1;
+  flex: 0.5;
   min-width: 150px;
   padding: 15px;
   display: flex;
@@ -58,7 +60,7 @@
 .months {
   list-style: none;
   display: grid;
-  grid-template-rows: repeat(12, 1fr); /* evenly distribute months */
+  grid-template-rows: repeat(12, 1fr);
   gap: 2px;
   flex-grow: 1;
   margin: 0;
@@ -77,18 +79,18 @@
   user-select: none;
 }
 
-
 .months li.active,
 .months li:hover {
   background-color: #d9eaff;
   color: #222;
 }
 
-/* Calendar Dates */
+/*--------------------------------- Calendar ---------------------------------*/
+
 .calendar {
-  flex: 3;
+  flex: 2;
   min-width: 250px;
-  padding: 15px;
+  padding: 4px 15px;
   box-sizing: border-box;
 }
 
@@ -132,6 +134,7 @@
   color: #333;
   position: relative;
   transition: background 0.2s;
+  padding: 10px;
 }
 
 .date:hover {
@@ -157,7 +160,7 @@
 /* Event Dots */
 .event-dots {
   position: absolute;
-  bottom: 7px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -183,13 +186,15 @@
   background-color: #3f51b5;
 }
 
-/* Events Section */
+/*--------------------------------- Events ---------------------------------*/
+
 .event {
-  flex: 1.2;
+  flex: 1;
   min-width: 280px;
-  padding: 20px 15px;
+  padding: 0 15px;
   box-sizing: border-box;
 }
+
 .no-events {
   font-style: italic;
   color: #999;
@@ -197,7 +202,7 @@
   margin-top: 40px;
 }
 
-.event h2 {
+.event h3 {
   font-size: 1.5rem;
   color: #3f51b5;
   font-weight: 700;
@@ -223,7 +228,18 @@
   color: #04207a;
 }
 
-/* Event Date Styles */
+.event-item.red {
+  border-left: 5px solid #ff5e62;
+}
+
+.event-item.yellow {
+  border-left: 5px solid #ffc107;
+}
+
+.event-item.blue {
+  border-left: 5px solid #3f51b5;
+}
+
 .event-date {
   display: flex;
   flex-direction: column;
@@ -257,7 +273,6 @@
   font-size: 14px;
 }
 
-/* Event Details */
 .event-details {
   flex: 1;
   padding: 0 10px;
@@ -267,6 +282,7 @@
   margin: 0;
   font-size: 17px;
   color: #333;
+  text-align: left;
 }
 
 .event-details p {
@@ -279,19 +295,8 @@
   color: #555;
 }
 
-.event-item.yellow {
-  border-left: 5px solid #ffc107;
-}
+/*--------------------------------- Month Header ---------------------------------*/
 
-.event-item.red {
-  border-left: 5px solid #ff5e62;
-}
-
-.event-item.blue {
-  border-left: 5px solid #3f51b5;
-}
-
-/* Month Header (Responsive Controls) */
 .month-header {
   display: flex;
   align-items: center;
@@ -310,4 +315,261 @@
 
 .month-btn:hover {
   color: #007bff;
+}
+
+/*---------------------------- Responsive Breakpoints ----------------------------*/
+
+/* Laptops & large tablets */
+@media (max-width: 1024px) {
+  .calendar-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 15px;
+    box-sizing: border-box;
+  }
+
+  .sidebar {
+    flex: 0.5;
+    min-width: 150px;
+    max-width: 180px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .calendar {
+    flex: 1.5;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .event {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .date {
+    padding: 10px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .calendar-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 15px;
+    box-sizing: border-box;
+  }
+
+  .sidebar {
+    flex: 0.5;
+    min-width: 150px;
+    max-width: 180px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .calendar {
+    flex: 1.5;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .event {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .month-header {
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .year {
+    font-size: 1.1rem;
+  }
+
+  .year-btn {
+    font-size: 1rem;
+  }
+
+  .months li {
+    font-size: 0.95rem;
+    padding: 4px 0;
+  }
+
+  .days {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .event h3 {
+    font-size: 1.3rem;
+  }
+
+  .event-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .event-details p,
+  .event-details .location {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Small tablets and mobile */
+@media (max-width: 768px) {
+
+  .calendar-wrapper,
+  .calendar-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .sidebar,
+  .calendar,
+  .event {
+    flex: 1 1 300px;
+    min-width: 250px;
+  }
+
+  .months,
+  .sidebar {
+    display: none;
+  }
+
+  .month-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .event-item {
+    padding: 8px;
+  }
+
+  .date {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .event-date .day {
+    font-size: 20px;
+  }
+
+  .event-date .month-year {
+    font-size: 13px;
+  }
+
+  .event-details h3 {
+    font-size: 1rem;
+  }
+
+  .event-details p,
+  .event-details .location {
+    font-size: 0.9rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+
+  .calendar-wrapper,
+  .calendar-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .sidebar,
+  .calendar,
+  .event {
+    flex: 1 1 300px;
+    min-width: 250px;
+  }
+
+  .months,
+  .sidebar {
+    display: none;
+  }
+
+  .event h3 {
+    font-size: 1.1rem;
+  }
+
+  .event-date .day {
+    font-size: 18px;
+  }
+
+  .event-date .month-year {
+    font-size: 11px;
+  }
+
+  .event-details h3 {
+    font-size: 0.95rem;
+  }
+
+  .event-details p,
+  .event-details .location {
+    font-size: 0.85rem;
+  }
+
+  .month-btn {
+    display: inline-block;
+  }
+
+  .months li {
+    font-size: 0.8rem;
+  }
+
+  .days {
+    font-size: 0.8rem;
+  }
+
+  .date {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
 }

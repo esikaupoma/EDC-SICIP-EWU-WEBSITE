@@ -1,488 +1,478 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 /*-------------------- Main Content ---------------------------------*/
 main {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
-
 #ewuHome {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    /* box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); */
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 #ewuHome::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(10, 30, 80, 0.8), rgba(10, 30, 80, 0.2));
-    z-index: 1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(10, 30, 80, 0.8),
+      rgba(10, 30, 80, 0.2));
+  z-index: 1;
+  pointer-events: none;
 }
 
 #ewuImage {
-    position: absolute;
-    width: 100%;
-    height: 130vh;
-    /* this makes the image stretch over both sections */
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    filter: brightness(80%);
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* ✅ Fill parent */
+  object-fit: cover;
+  /* ✅ Keep proportion and crop */
+  filter: brightness(80%);
+  z-index: 0;
 }
 
 .presentation-message {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
 }
 
 .presentation-message h1 {
-    font-size: 5em;
-    padding: 4px;
-    margin: 0px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 5em;
+  padding: 4px;
+  margin: 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .presentation-message p {
-    font-size: 2em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0px;
-
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin: 0px;
 }
 
 .apply-now-btn {
-    display: inline-block;
-    margin-top: 80px;
-    padding: 13px 50px;
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
-    font-size: 1.2em;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  margin-top: 80px;
+  padding: 13px 50px;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .apply-now-btn:hover {
-    /* background-color: rgba(162, 237, 247, 0.925); */
-    color: #31dee4;
-    border: 1px solid #31dee4;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(162, 237, 247, 0.925); */
+  color: #31dee4;
+  border: 1px solid #31dee4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 /* ---------------------------- TITLE (For Reuse)--------------------------------*/
 
 .title-class {
-    border-bottom: 4px solid #182e59;
-    margin-bottom: 20px;
+  border-bottom: 4px solid #182e59;
+  margin-bottom: 20px;
 }
 
 .title-class h2 {
-    margin: 0;
-    padding: 3px 18px;
-    color: #fff;
-    background: #182e59;
-    display: inline-block;
-    position: relative;
+  margin: 0;
+  padding: 3px 18px;
+  color: #fff;
+  background: #182e59;
+  display: inline-block;
+  position: relative;
 }
 
 .title-class h2::before {
-    content: "";
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid #182e59;
-    position: absolute;
-    right: -20px;
-    top: 0;
+  content: "";
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #182e59;
+  position: absolute;
+  right: -20px;
+  top: 0;
 }
-
 
 /* ---------------------------- Paragraph (For Reuse)--------------------------------*/
 .paragraph {
-    font-size: 1.2em;
-    color: #0e274e;
-    margin-top: 10px;
-    text-align: justify;
+  font-size: 1.2em;
+  color: #1a3365;
+  text-align: justify;
 }
-
-
 
 /* ---------------------------- ABOUT EDC SICIP --------------------------------*/
 .edc-sicip {
-    margin: 50px 200px;
+  margin: 50px 200px;
 }
 
 .title-class {
-    border-bottom: 4px solid var(--primary-color);
-    margin-bottom: 20px;
+  border-bottom: 4px solid var(--primary-color);
+  margin-bottom: 20px;
 }
-
-
 
 /*-------------------------- carousel------------------------------ */
 .picture-carousel {
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to right, #f3f4f6, #e5e7eb);
-    box-sizing: border-box;
-    margin-bottom: 30px;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
 .carousel-container {
-    display: flex;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-    gap: 20px;
-    height: 100%;
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+  height: 100%;
 }
 
 .slideshow-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .slides {
-    display: none;
-    width: 100%;
-    height: 100%;
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 
 .slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fade {
-    animation: fade 1s ease-in-out;
+  animation: fade 1s ease-in-out;
 }
 
 @keyframes fade {
-    from {
-        opacity: 0.4;
-    }
+  from {
+    opacity: 0.4;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .prev,
 .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transform: translateY(-50%);
-    user-select: none;
-    z-index: 2;
-    transition: background-color 0.5s ease, opacity 0.3s ease;
-    /* border-radius: 50%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transform: translateY(-50%);
+  user-select: none;
+  z-index: 2;
+  transition: background-color 0.5s ease, opacity 0.3s ease;
+  /* border-radius: 50%; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .prev {
-    left: 10px;
+  left: 10px;
 }
 
 .next {
-    right: 10px;
+  right: 10px;
 }
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
 }
 
 .indicator-container {
-    text-align: center;
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  z-index: 10;
 }
 
 .indicator {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  margin: 0 6px;
+  background-color: #b3c0d1;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .indicator.active {
-    background-color: #576ba0;
+  background-color: #1a3365;
+  transform: scaleY(1.2);
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.25);
 }
-
 
 /* Same side-box styling as before */
 .admission {
-    flex: 1;
-    display: flex;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .side-box-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .side-box {
-    background-color: #b3d9f8;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 30px 35px;
+  background-color: #b3d9f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 30px 35px;
 }
 
 .side-box h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .side-box p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .button {
-    width: 140px;
-    display: inline-block;
-    padding: 8px 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: 1px solid transparent;
-    /* border-radius: 5px; */
-    text-decoration: none;
-    font-size: 15px;
-    transition: background-color 0.5s ease, border-color 0.5s ease;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: center;
+  width: 140px;
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 1px solid transparent;
+  /* border-radius: 5px; */
+  text-decoration: none;
+  font-size: 15px;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
 }
 
 .button:hover {
-    background-color: #2dbb02;
-    color: #ffffff;
-    outline: 1px solid white;
+  background-color: #2dbb02;
+  color: #ffffff;
+  outline: 1px solid white;
 }
 
 /*------------------------------------ info boxes------------------------------ */
 #valueProposition-section {
-    /* background-color: #dfe9ff; */
-    padding: 40px 0px;
-    /* padding-bottom: 20px; */
-    text-align: center;
-
+  /* background-color: #dfe9ff; */
+  padding: 40px 0px;
+  /* padding-bottom: 20px; */
+  text-align: center;
 }
 
+
 .info-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 20px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 0 100px;
+  margin: 0 auto;
 }
 
 .info-box {
-    padding: 20px 15px;
-    text-align: center;
-    width: calc(20% - 100px);
-    border-radius: 0px;
-    min-width: 230px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 15px;
+  text-align: center;
+  width: calc(20% - 100px);
+  border-radius: 0px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
-
 #info-box-1 {
-    background-color: #10c45c;
+  background-color: #10c45c;
 }
 
 #info-box-2 {
-    background-color: #307ad5;
+  background-color: #307ad5;
 }
 
 #info-box-3 {
-    background-color: #eab830;
+  background-color: #eab830;
 }
 
 #info-box-4 {
-    background-color: #1ec1d9;
+  background-color: #1ec1d9;
 }
 
 #info-box-5 {
-    background-color: #FA8072;
+  background-color: #fa8072;
 }
 
 .info-box .material-icons {
-    font-size: 70px;
-    color: hsl(0, 0%, 100%);
-    margin-bottom: 10px;
+  font-size: 60px;
+  color: hsl(0, 0%, 100%);
+  margin-top: 10px;
 }
 
 .info-box h3 {
-    color: hsl(0, 0%, 100%);
-    font-size: 20px;
-    margin-bottom: 10px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .info-box p {
-    color: hsl(0, 0%, 100%);
-    font-size: 15px;
+  color: hsl(0, 0%, 100%);
+  font-size: 15px;
 }
 
 .info-box:hover {
-    transform: translateY(-5px);
-
+  transform: translateY(-5px);
 }
 
 /* ----------------------------EDC'S VISION--------------------------------*/
 .edc-vision {
-    margin: 50px 60px;
-    /* border: 1px solid black; */
-    padding: 0px 220px;
+  margin: 50px 60px;
+  /* border: 1px solid black; */
+  padding: 0px 220px;
 }
 
-.title-class {
+/* .title-class {
     border-bottom: 4px solid #182e59;
     margin-bottom: 20px;
-}
-
-
+} */
 
 /* ----------------------------team members------------------------------- */
-.meet-our-teams-container {
-    text-align: center;
-    padding: 40px;
-    /* background-color: #8fb6e6; */
-    background-image: url('Resources/images/EDC_Members/MemberPicturebackground.jpg');
-    background-size: cover;
-    background-position: center;
+.team-section {
+  text-align: center;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  z-index: 0;
 }
 
-.meet-our-teams-container h2 {
-    font-size: 30px;
-    margin-bottom: 90px;
-    color: #0b67b3;
-    border-bottom: 3px solid #e1f1f7;
+.team-header {
+  background-color: #bcd2eb;
+  padding: 30px 0px 120px 0px;
+  position: relative;
+  z-index: 1;
 }
 
-.team-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.team-header h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-top: -100px;
+  /* pull up */
+  padding: 0 20px 60px;
+  position: relative;
+  z-index: 3;
+  overflow-x: auto;
 }
 
 .member {
-    display: inline-block;
-    width: 220px;
-    padding: 50px 20px 40px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+  padding: 200px 15px 30px;
+  width: 220px;
+  position: relative;
 }
 
-.member-photo {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 3px solid #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.member img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  background-color: #fff;
+  position: absolute;
+  top: -0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 }
 
 .member h3 {
-    font-size: 15px;
-    color: #2114dd;
-    margin: 50px 0 40px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 20px 0 15px;
 }
 
 .details-btn {
-    padding: 12px 40px;
-    background-color: #346383;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    text-decoration: none;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid #1a3365;
+  color: #1a3365;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .details-btn:hover {
-    opacity: 0.8;
+  background-color: #1a3365;
+  color: #ffffff;
 }
 
-
-/* ---------------------------NOTICE BOARD-------------------------------- */
+/* ---------------------------News-------------------------------- */
 
 .news-board {
- margin: 50px 60px;
+  margin: 50px 60px;
   padding: 0px 220px;
 }
+
 .news-title-bar {
   display: flex;
   justify-content: space-between;
@@ -491,8 +481,10 @@ main {
 
 .news-carousel {
   display: flex;
+  justify-content: center;
   gap: 20px;
-  overflow: hidden; /* Hides scrollbar */
+  overflow: hidden;
+  /* Hides scrollbar */
   padding-bottom: 10px;
   transition: transform 0.6s ease-in-out;
   will-change: transform;
@@ -501,10 +493,12 @@ main {
 .news-carousel::-webkit-scrollbar {
   height: 8px;
 }
+
 .news-carousel::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 4px;
 }
+
 .news-carousel::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -513,7 +507,7 @@ main {
   flex: 0 0 auto;
   width: 250px;
   background-color: white;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -546,7 +540,7 @@ main {
 }
 
 .news-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   padding: 12px;
   color: #1a3365;
@@ -573,6 +567,7 @@ main {
   padding: 4px 14px;
   color: #1a3365;
   font-weight: 500;
+  font-size: 14px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -581,7 +576,152 @@ main {
   color: white;
 }
 
+/* Minimal Slick Carousel dot styles for news-board */
+/* Slick dots styled as lines for news board */
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  gap: 6px;
+}
 
+.slick-dots li {
+  display: inline-block;
+}
+
+.slick-dots button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+  /* width of each line dot */
+  height: 4px;
+  /* height of each line dot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots button span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  background: #b3c0d1;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slick-dots li.slick-active button span {
+  background: #1a3365;
+  transform: scaleY(1.2);
+}
+
+/* News-board slider track for smooth sliding animation */
+.news-slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade-in animation for news-board items */
+.news-fade-in {
+  opacity: 0;
+  animation: newsFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes newsFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* -----------------------Notice Board Section ----------------------------*/
+
+.notice-board {
+  margin: 50px 60px;
+  padding: 0px 220px;
+}
+
+.notice-board .title-class {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.notice-board .view-all-button {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #1a3365;
+  padding: 4px 14px;
+  color: #1a3365;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.notice-board .view-all-button:hover {
+  background-color: #1a3365;
+  color: white;
+}
+
+.notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.notice-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  font-size: 1.2em;
+  color: #1a3365;
+}
+
+.notice-list li:last-child {
+  border-bottom: none;
+}
+
+.notice-date {
+  font-size: 0.8em;
+  color: #888;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.notice-text {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+/* Optional scrollbar styling */
+.notice-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notice-list::-webkit-scrollbar-thumb {
+  background-color: #b3c0d1;
+  border-radius: 3px;
+}
 
 /* -----------------------Event Calendar Section ----------------------------*/
 .event-calendar-section {
@@ -589,330 +729,583 @@ main {
   padding: 0px 220px;
 }
 
-
 @media screen and (max-width: 1400px) {
-    .presentation-message h1 {
-        font-size: 3em;
-        margin: 0;
-    }
+  .presentation-message h1 {
+    font-size: 3em;
+    margin: 0;
+  }
 
-    .presentation-message p {
-        font-size: 1.5em;
-    }
+  .presentation-message p {
+    font-size: 1.5em;
+    text-align: center;
+  }
 
-    .edc-sicip {
-        margin: 50px 100px;
-    }
+  .edc-sicip,
+  .edc-vision,
+  .news-board,
+  .event-calendar-section,
+  .notice-board {
+    /* margin: 50px 90px; */
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
 
-    .edc-vision {
-        margin: 50px 100px;
-        padding: 0px 100px;
-    }
+  .carousel-container {
+    gap: 15px;
+    padding: 0 15px;
+  }
 
-    .news-board {
-        margin: 50px 100px;
-        padding: 0px 100px;
-    }
+  .carousel {
+    flex: 1.5;
+    max-width: 900px;
+  }
 
-    #sicip-title {
-        font-size: 18px;
-        padding-bottom: 5px
-    }
+  .admission {
+    flex: 1;
+  }
 
-    #sicip-title:before {
-        border-right: 20px solid transparent;
-        border-bottom: 40px solid var(--primary-color);
-    }
+  .side-box h3 {
+    font-size: 1.2rem;
+  }
 
-    #vision-title {
-        font-size: 18px;
-        padding-bottom: 5px
-    }
+  .side-box p {
+    font-size: 14px;
+  }
 
-    /* Carousel responsive styles */
-    .carousel-container {
-        gap: 15px;
-        padding: 0 15px;
-    }
+  .button {
+    width: 120px;
+    font-size: 13px;
+    padding: 5px 10px;
+  }
 
-    .carousel {
-        flex: 1.5;
-    }
+  .info-box {
+    width: calc(30% - 14px);
+  }
 
-    .admission {
-        flex: 1;
-    }
+  .news-item {
+    min-width: 220px;
+  }
 
-    .side-box h3 {
-        font-size: 18px;
-    }
+  .news-item img {
+    height: 160px;
+  }
 
-    .side-box p {
-        font-size: 14px;
-    }
+  .info-box p {
+    font-size: 0.9rem;
+  }
 
-    .button {
-        width: 120px;
-        font-size: 13px;
-        padding: 5px 10px;
-    }
+  .info-box h3 {
+    font-size: 1.2rem;
+  }
 
-    .info-box {
-        width: calc(30% - 14px);
-    }
+  .member h3 {
+    font-size: 1rem;
+  }
 
-    .carousel {
-        max-width: 900px;
-    }
-
-    .news-item {
-        min-width: 220px;
-    }
-
-    .news-item img {
-        height: 160px;
-    }
-
-    /* Text justification and font size adjustments */
-    .presentation-message p {
-        text-align: center;
-    }
-
-    /* 
-    p {
-        text-align: justify;
-        font-size: 0.95rem;
-    } */
-
-    .sicip-description,
-    .vision-description {
-        font-size: 1em;
-    }
-
-    .info-box p {
-        font-size: 0.9rem;
-    }
-
-    .info-box h3 {
-        font-size: 1.1rem;
-    }
-
-    .member h3 {
-        font-size: 1rem;
-    }
-
-    .caption {
-        font-size: 0.9rem;
-    }
-
-    /* Event Calendar Section */
-    .event-calendar-section {
-        margin: 50px 100px;
-        padding: 0px 100px;
-    }
+  .caption {
+    font-size: 0.9rem;
+  }
 }
 
+
+
+/* ============================== 1400px and below =============================== */
+@media screen and (max-width: 1400px) {
+  .presentation-message h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .presentation-message p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .edc-sicip,
+  .edc-vision,
+  .news-board,
+  .event-calendar-section,
+  .notice-board,
+  .carousel-container {
+    padding: 0 25px;
+    box-sizing: border-box;
+    margin: 50px 90px;
+  }
+
+  .carousel {
+    flex: 1.5;
+    max-width: 900px;
+  }
+
+  .admission {
+    flex: 1;
+  }
+
+  .side-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .side-box p,
+  .info-box p,
+  .caption {
+    font-size: 0.8rem;
+  }
+
+  .button {
+    width: 120px;
+    font-size: 0.8125rem;
+    padding: 5px 10px;
+  }
+
+  .info-box {
+    width: calc(30% - 14px);
+
+  }
+
+  .info-boxes {
+    gap: 5px;
+    padding: 0 15px;
+  }
+
+  .news-item {
+    min-width: 220px;
+  }
+
+  .news-item img {
+    height: 160px;
+  }
+
+  .info-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .member h3 {
+    font-size: 1rem;
+  }
+
+  .team-members {
+    gap: 5px;
+    padding: 0 100px 60px;
+  }
+
+  .member {
+    width: 200px;
+    padding: 170px 10px 30px;
+  }
+
+  .member img {
+    width: 150px;
+    height: 150px;
+    top: 20px;
+  }
+}
+
+/* ===================== 992px and below ===================== */
 @media screen and (max-width: 992px) {
-    .info-box {
-        width: calc(33.3% - 10px);
-    }
-
-    .team-box {
-        gap: 20px;
-        padding-top: 30px;
-    }
-
-    .member {
-        width: 150px;
-        margin: 20px 0;
-    }
-
-    .member-photo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .member h3 {
-        font-size: 12px;
-        margin: 10px 0 20px;
-        height: 40px;
-    }
-
-    .details-btn {
-        font-size: 0.8em;
-        padding: 6px 20px;
-    }
-
-    /* Text justification and font size adjustments */
-    p {
-        font-size: 0.9rem;
-    }
-
-    .sicip-description,
-    .vision-description {
-        font-size: 0.9em;
-    }
-
-    .info-box p {
-        font-size: 0.85rem;
-    }
-
-    .info-box h3 {
-        font-size: 1rem;
-    }
-
-    .caption {
-        font-size: 0.85rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .presentation-message h1 {
-        font-size: 2.5em;
-    }
-
-    .edc-sicip {
-        margin: 20px 30px;
-    }
-
-    .edc-vision {
-        margin: 20px 30px;
-        padding: 0px 30px;
-    }
-
-    .news-board {
-        margin: 24px 16px;
-        padding: 0px 10px;
-    }
-
-    /* Carousel responsive styles */
-    .carousel-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .carousel {
-        width: 100%;
-        aspect-ratio: 16/9;
-        padding: 0;
-    }
-
-    .admission {
-        width: 100%;
-    }
-
-    .side-box-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .side-box {
-        flex: 1;
-        min-width: 280px;
-        max-width: 400px;
-    }
-
-    .side-box h3 {
-        font-size: 20px;
-    }
-
-    .side-box p {
-        font-size: 15px;
-    }
-
-    .button {
-        width: 140px;
-        font-size: 15px;
-        padding: 8px 20px;
-    }
-
-    .info-box {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .info-boxes {
-        gap: 15px;
-    }
-
-    .meet-our-teams-container {
-        padding: 0;
-        margin: 0;
-    }
-
-    .team-box {
-        gap: 20px;
-        padding-top: 30px;
-    }
-
-    .member {
-        width: 100px;
-        margin: 20px 0;
-    }
-
-    .member-photo {
-        width: 75px;
-        height: 75px;
-    }
-
-    .member h3 {
-        font-size: 12px;
-        margin: 0px 0 30px;
-        height: 0px;
-    }
-
-    .details-btn {
-        font-size: 0.7em;
-        padding: 6px 20px;
-    }
-
-    .news-item {
-        min-width: 200px;
-    }
-
-    .news-item img {
-        height: 140px;
-    }
-
-    .caption {
-        font-size: 13px;
-    }
-
-    /* Text justification and font size adjustments */
-    p {
-        font-size: 0.8rem;
-    }
-
-    .sicip-description,
-    .vision-description {
-        font-size: 0.95em;
-        text-align: justify;
-    }
-
-    .info-box p {
-        font-size: 0.8rem;
-    }
-
-    .info-box h3 {
-        font-size: 0.95rem;
-    }
-
-    .caption {
-        font-size: 0.8rem;
-    }
-
-    /* Event Calendar Section */
-    .event-calendar-section {
-        margin: 24px 16px;
-        padding: 0px 10px;
-    }
-}
-
-
-
-
-/* .event-calendar-section .title-class {
+  .title-class {
     border-bottom: 4px solid var(--primary-color);
-    margin-bottom: 20px;
-} */
+    margin-bottom: 10px;
+  }
+
+  .title-class h2::before {
+    border-bottom: 34px solid #182e59;
+  }
+
+  .title-class h2 {
+    font-size: 1.2rem;
+    padding: 4px 14px;
+  }
+
+  .paragraph,
+  p,
+  .info-box p,
+  .caption {
+    font-size: 0.8rem;
+  }
+
+  .edc-sicip,
+  .edc-vision,
+  .news-board,
+  .event-calendar-section,
+  .notice-board,
+  .carousel-container {
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 50px 30px;
+  }
+
+  .info-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .info-box {
+    flex: 0 0 calc(25% - 5px);
+    max-width: calc(25% - 5px);
+    padding: 5px 15px;
+  }
+
+  .info-box .material-icons {
+    font-size: 50px;
+  }
+
+  .info-box h3 {
+    font-size: 1.1rem;
+    margin: 0px;
+  }
+
+  .team-members {
+    gap: 5px;
+    padding: 0 60px 60px;
+  }
+
+  .member {
+    width: 200px;
+    padding: 160px 10px 30px;
+  }
+
+  .member img {
+    width: 120px;
+    height: 120px;
+    top: 30px;
+  }
+
+  .member h3 {
+    font-size: 0.75rem;
+    margin: 10px 0 20px;
+    height: 40px;
+  }
+
+  .details-btn {
+    font-size: 0.8rem;
+    padding: 6px 20px;
+  }
+
+}
+
+/* ===================== 768px and below ===================== */
+@media screen and (max-width: 768px) {
+  main {
+    margin: 0;
+  }
+
+  .title-class {
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .title-class h2::before {
+    border-bottom: 32px solid #182e59;
+  }
+
+  .title-class h2 {
+    font-size: 1.1rem;
+    padding: 3px 12px;
+  }
+
+  #ewuHome {
+    height: 50vh;
+  }
+
+  #ewuImage {
+    height: 120vh;
+  }
+
+  .presentation-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 2px 20px;
+    margin-top: 100px;
+  }
+
+  .presentation-message h1 {
+    font-size: 1.9rem;
+    margin: 2px 15px;
+  }
+
+  .presentation-message p {
+    font-size: 0.9rem;
+    margin: 2px 15px;
+  }
+
+  .apply-now-btn {
+    margin-top: 30px;
+    padding: 10px 45px;
+    font-size: 0.8rem;
+  }
+
+  .edc-sicip,
+  .edc-vision,
+  .news-board,
+  .event-calendar-section,
+  .notice-board,
+  .carousel-container {
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 50px 10px;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .carousel,
+  .admission {
+    width: 100%;
+    padding: 0;
+  }
+
+  .carousel {
+    aspect-ratio: 16/9;
+  }
+
+  .indicator-container {
+    bottom: 1px;
+  }
+
+  .prev {
+    left: 1px;
+  }
+
+  .next {
+    right: 1px;
+  }
+
+  .side-box-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .side-box {
+    flex: 1;
+    min-width: 240px;
+    max-width: 400px;
+  }
+
+  .side-box h3 {
+    font-size: 1.25rem;
+  }
+
+  .side-box p,
+  .info-box p,
+  .caption {
+    font-size: 0.8rem;
+  }
+
+  .button {
+    width: 140px;
+    font-size: 0.875rem;
+    padding: 8px 20px;
+  }
+
+  .info-boxes {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .info-box {
+    width: 80%;
+    max-width: 400px;
+  }
+
+
+  .team-members {
+    gap: 2px;
+    padding: 0 30px 60px;
+  }
+
+  .member {
+    width: 45%;
+    margin: auto;
+  }
+
+  .member img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .member h3 {
+    font-size: 0.75rem;
+    margin: 0 0 30px;
+    height: auto;
+  }
+
+  .details-btn {
+    font-size: 0.7rem;
+    padding: 6px 20px;
+  }
+
+
+  .news-item {
+    min-width: 200px;
+  }
+
+  /* .notice-text {
+    font-size: 1rem;
+  } */
+
+  .news-item img {
+    height: 140px;
+  }
+}
+
+
+/* ========================================= 480px and below ================================================== */
+@media screen and (max-width: 480px) {
+
+  .title-class h2::before {
+    border-bottom: 30px solid #182e59;
+  }
+
+
+
+  .presentation-message h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .presentation-message p {
+    font-size: 0.8rem;
+    margin: 5px 0;
+  }
+
+  .apply-now-btn {
+    margin-top: 20px;
+    padding: 8px 30px;
+    font-size: 0.75rem;
+  }
+
+  .edc-sicip,
+  .edc-vision,
+  .news-board,
+  .event-calendar-section,
+  .notice-board,
+  .carousel-container {
+    padding: 0 10px;
+    margin: 30px 5px;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel,
+  .admission {
+    width: 100%;
+    padding: 0;
+  }
+
+  .carousel {
+    aspect-ratio: 16 / 9;
+  }
+
+  .indicator-container {
+    bottom: 0;
+  }
+
+  .prev,
+  .next {
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .side-box-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .side-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+  }
+
+  .side-box h3 {
+    font-size: 1rem;
+  }
+
+  .side-box p,
+  .info-box p,
+  .caption {
+    font-size: 0.75rem;
+  }
+
+  .button {
+    width: 100px;
+    font-size: 0.75rem;
+    padding: 6px 15px;
+  }
+
+  .info-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .info-box {
+    width: 90%;
+    padding: 15px;
+    font-size: 0.8rem;
+    max-width: 320px;
+  }
+
+  .info-box h3 {
+    font-size: 1rem;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 40px;
+    gap: 10px;
+  }
+
+  .member {
+    width: 100%;
+    max-width: 250px;
+    padding: 100px 10px 20px;
+    position: relative;
+  }
+
+  .member img {
+    width: 90px;
+    height: 90px;
+    top: 10px;
+  }
+
+  .member h3 {
+    font-size: 0.8rem;
+    margin: 10px 0 20px;
+  }
+
+  .details-btn {
+    font-size: 0.75rem;
+    padding: 6px 18px;
+  }
+
+  .news-item {
+    min-width: 100%;
+  }
+
+  .news-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .notice-text {
+    font-size: 1rem;
+  }
+}

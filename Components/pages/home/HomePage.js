@@ -73,66 +73,102 @@ class HomePage extends HTMLElement {
     nextBtn?.addEventListener('click', () => changeSlide(1));
 
 
-// ---------------Notice board carousel functionality-------------------------//
+    // ---------------News carousel functionality-------------------------//
+    function setupSlickDotsNewsBoard() {
+      const newsCarouselBoard = shadow.querySelector('.news-carousel');
+      const newsItemsBoard = shadow.querySelectorAll('.news-carousel .news-item');
+      const slickDots = shadow.querySelector('.slick-dots');
+      if (!newsCarouselBoard || !newsItemsBoard.length || !slickDots) return;
+      let newsIndexBoard = 0;
+      let newsIntervalBoard;
+      let visibleCount = 1;
 
-// ---------------Notice board carousel functionality (Auto-Slide)-------------------------//
+      function updateVisibleCount() {
+        const containerWidth = newsCarouselBoard.offsetWidth;
+        const itemWidth = newsItemsBoard[0]?.offsetWidth || 250;
+        visibleCount = Math.floor(containerWidth / itemWidth) || 1;
+      }
 
-const track = document.querySelector('.news-carousel');
-const newsItems = document.querySelectorAll('.news-item');
+      function showNewsBoard(index) {
+        updateVisibleCount();
+        newsItemsBoard.forEach((item, i) => {
+          item.classList.remove('news-fade-in');
+          if (i >= index && i < index + visibleCount) {
+            item.style.display = 'block';
+            // Trigger reflow to restart animation
+            void item.offsetWidth;
+            item.classList.add('news-fade-in');
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        if (slickDots) {
+          Array.from(slickDots.children).forEach((li, i) => {
+            li.classList.toggle('slick-active', i === Math.floor(index / visibleCount));
+          });
+        }
+      }
 
-let currentIndex = 0;
-const itemWidth = newsItems[0]?.offsetWidth + 20; // Adjust for gap/margin
-const visibleItems = Math.floor(track?.offsetWidth / itemWidth);
-const maxIndex = newsItems.length - visibleItems;
+      function createSlickDots() {
+        updateVisibleCount();
+        if (!slickDots) return;
+        slickDots.innerHTML = '';
+        const dotCount = Math.ceil(newsItemsBoard.length / visibleCount);
+        for (let i = 0; i < dotCount; i++) {
+          const li = document.createElement('li');
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.innerHTML = '<span></span>';
+          btn.addEventListener('click', () => {
+            newsIndexBoard = i * visibleCount;
+            showNewsBoard(newsIndexBoard);
+          });
+          li.appendChild(btn);
+          slickDots.appendChild(li);
+        }
+      }
 
-function updateCarousel() {
-  if (!track) return;
-  const newPosition = -currentIndex * itemWidth;
-  track.style.transform = `translateX(${newPosition}px)`;
-}
+      function nextNewsBoard() {
+        updateVisibleCount();
+        const dotCount = Math.ceil(newsItemsBoard.length / visibleCount);
+        const currentDot = Math.floor(newsIndexBoard / visibleCount);
+        const nextDot = (currentDot + 1) % dotCount;
+        newsIndexBoard = nextDot * visibleCount;
+        showNewsBoard(newsIndexBoard);
+      }
+      function startNewsAutoBoard() {
+        newsIntervalBoard = setInterval(nextNewsBoard, 5000);
+      }
+      function stopNewsAutoBoard() {
+        clearInterval(newsIntervalBoard);
+      }
 
-// Auto slide every 3 seconds
-let autoSlide = setInterval(() => {
-  currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
-  updateCarousel();
-}, 3000);
+      // Pause on hover
+      newsCarouselBoard.addEventListener('mouseenter', stopNewsAutoBoard);
+      newsCarouselBoard.addEventListener('mouseleave', startNewsAutoBoard);
+      window.addEventListener('resize', () => {
+        createSlickDots();
+        showNewsBoard(newsIndexBoard = 0);
+      });
 
-// Optional: pause on hover
-track.addEventListener('mouseenter', () => clearInterval(autoSlide));
-track.addEventListener('mouseleave', () => {
-  autoSlide = setInterval(() => {
-    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
-    updateCarousel();
-  }, 3000);
-});
+      // Initialize
+      createSlickDots();
+      showNewsBoard(newsIndexBoard);
+      startNewsAutoBoard();
+    }
 
-// Optional: Mouse drag scroll (if you still want it)
-let isMouseDown = false;
-let startX;
-let scrollLeft;
+    // Run immediately if possible, otherwise wait for .slick-dots
+    if (shadow.querySelector('.news-carousel') && shadow.querySelector('.slick-dots')) {
+      setupSlickDotsNewsBoard();
+    } else {
+      const observer = new MutationObserver(() => {
+        if (shadow.querySelector('.news-carousel') && shadow.querySelector('.slick-dots')) {
+          observer.disconnect();
+          setupSlickDotsNewsBoard();
+        }
+      });
 
-track.addEventListener('mousedown', (e) => {
-  isMouseDown = true;
-  startX = e.pageX - track.offsetLeft;
-  scrollLeft = track.scrollLeft;
-});
-
-track.addEventListener('mouseleave', () => {
-  isMouseDown = false;
-});
-
-track.addEventListener('mouseup', () => {
-  isMouseDown = false;
-});
-
-track.addEventListener('mousemove', (e) => {
-  if (!isMouseDown) return;
-  e.preventDefault();
-  const x = e.pageX - track.offsetLeft;
-  const walk = (x - startX) * 2;
-  track.scrollLeft = scrollLeft - walk;
-});
-
+    }
   }
 }
 

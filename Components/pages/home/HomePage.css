@@ -230,9 +230,9 @@ main {
 .indicator {
   display: inline-block;
   width: 40px;
-  height: 4px;
-  margin: 0 6px;
-  background-color: #b3c0d1;
+  height: 3px;
+  margin: 0 3px;
+  background-color: #ffffff;
   border-radius: 2px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -241,7 +241,7 @@ main {
 .indicator.active {
   background-color: #1a3365;
   transform: scaleY(1.2);
-  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.25); */
 }
 
 /* Same side-box styling as before */
@@ -466,6 +466,25 @@ main {
   color: #ffffff;
 }
 
+
+/*-------------------------- View all Button for News & Notice(REUSE)------------------ */
+.view-all-button {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #1a3365;
+  padding: 4px 14px;
+  color: #1a3365;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.view-all-button:hover {
+  background-color: #1a3365;
+  color: white;
+}
+
+
 /* ---------------------------News-------------------------------- */
 
 .news-board {
@@ -560,21 +579,6 @@ main {
   text-align: right;
 }
 
-.view-all-button {
-  display: inline-block;
-  text-decoration: none;
-  border: 1px solid #1a3365;
-  padding: 4px 14px;
-  color: #1a3365;
-  font-weight: 500;
-  font-size: 14px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.view-all-button:hover {
-  background-color: #1a3365;
-  color: white;
-}
 
 /* Minimal Slick Carousel dot styles for news-board */
 /* Slick dots styled as lines for news board */
@@ -658,22 +662,6 @@ main {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.notice-board .view-all-button {
-  display: inline-block;
-  text-decoration: none;
-  border: 1px solid #1a3365;
-  padding: 4px 14px;
-  color: #1a3365;
-  font-weight: 500;
-  font-size: 14px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.notice-board .view-all-button:hover {
-  background-color: #1a3365;
-  color: white;
 }
 
 .notice-list {
@@ -1009,7 +997,11 @@ main {
   }
 
   #ewuImage {
-    height: 120vh;
+    height: 80vh;
+    filter: brightness(100%);
+    background: linear-gradient(to right,
+        rgba(22, 50, 122, 0.712),
+        rgba(21, 50, 124, 0.2));
   }
 
   .presentation-message {
@@ -1119,24 +1111,32 @@ main {
 
 
   .team-members {
-    gap: 2px;
-    padding: 0 30px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 5px;
+    padding: 40px 10px;
+  }
+
+  .team-header {
+    padding: 10px 0px 65px 0px;
   }
 
   .member {
-    width: 45%;
-    margin: auto;
+    width: 100%;
+    max-width: 250px;
+    padding: 100px 10px 20px;
+    position: relative;
   }
 
   .member img {
     width: 100px;
     height: 100px;
+    top: 10px;
   }
 
   .member h3 {
-    font-size: 0.75rem;
-    margin: 0 0 30px;
-    height: auto;
+    margin: 30px 5px 2px;
   }
 
   .details-btn {
@@ -1144,6 +1144,9 @@ main {
     padding: 6px 20px;
   }
 
+  .view-all-button {
+    padding: 2px 12px;
+  }
 
   .news-item {
     min-width: 200px;
@@ -1167,6 +1170,17 @@ main {
   }
 
 
+  #ewuHome {
+    height: 40vh;
+  }
+
+  #ewuImage {
+    height: 65vh;
+    filter: brightness(110%);
+    background: linear-gradient(to right,
+        rgba(22, 50, 122, 0.712),
+        rgba(21, 50, 124, 0.2));
+  }
 
   .presentation-message h1 {
     font-size: 1.5rem;
@@ -1213,6 +1227,13 @@ main {
     bottom: 0;
   }
 
+
+  .indicator {
+    width: 30px;
+    height: 2px;
+    margin: 0 2px;
+  }
+
   .prev,
   .next {
     font-size: 1rem;
@@ -1221,7 +1242,7 @@ main {
   }
 
   .side-box-container {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     gap: 10px;
   }
@@ -1266,11 +1287,23 @@ main {
     font-size: 1rem;
   }
 
+
   .team-members {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px 40px;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 5px;
+    padding: 40px 10px;
+  }
+
+  /* Center the last member if it's alone in the third row */
+  .team-members .member:nth-child(5) {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .team-header {
+    padding: 20px 0px 65px 0px;
   }
 
   .member {
@@ -1281,19 +1314,23 @@ main {
   }
 
   .member img {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     top: 10px;
   }
 
   .member h3 {
     font-size: 0.8rem;
-    margin: 10px 0 20px;
+    margin: 30px 10px 0px;
   }
 
   .details-btn {
     font-size: 0.75rem;
     padding: 6px 18px;
+  }
+
+  .view-all-button {
+    padding: 2px 10px;
   }
 
   .news-item {
@@ -1303,6 +1340,17 @@ main {
   .news-item img {
     width: 100%;
     height: auto;
+  }
+
+  .slick-dots {
+    gap: 0px;
+    margin: 8px 0 0 0;
+  }
+
+  .slick-dots button span {
+    width: 30px;
+    height: 2px;
+    margin: 0 auto;
   }
 
   .notice-text {

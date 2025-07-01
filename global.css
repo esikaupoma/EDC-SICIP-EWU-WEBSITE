@@ -93,11 +93,11 @@ body {
 
 
 /* ========== 480px and below ========== */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .title-class h2::before {
-    border-bottom: 30px solid #182e59;
+    border-bottom: 32px solid #182e59;
   }
-}
+} */
 
 
 

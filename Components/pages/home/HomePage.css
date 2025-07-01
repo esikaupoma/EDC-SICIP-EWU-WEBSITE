@@ -1255,7 +1255,7 @@ main {
 
 
   #ewuHome {
-    height: 40vh;
+    height: 55vh;
   }
 
   #ewuImage {
@@ -1265,7 +1265,9 @@ main {
         rgba(22, 50, 122, 0.712),
         rgba(21, 50, 124, 0.2));
   }
-
+.presentation-message{
+  margin-top: 120px;
+}
   .presentation-message h1 {
     font-size: 1.8rem;
     margin: 0px 0;
@@ -1274,6 +1276,7 @@ main {
   .presentation-message p {
     font-size: 0.9rem;
     margin: 5px 0;
+    padding: 0px;
   }
 
   .apply-now-btn {

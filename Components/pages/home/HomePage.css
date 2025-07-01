@@ -84,7 +84,7 @@ main {
 
 /* ---------------------------- TITLE (For Reuse)--------------------------------*/
 
-.title-class {
+/* .title-class {
   border-bottom: 4px solid #182e59;
   margin-bottom: 20px;
 }
@@ -105,7 +105,7 @@ main {
   position: absolute;
   right: -20px;
   top: 0;
-}
+} */
 
 /* ---------------------------- Paragraph (For Reuse)--------------------------------*/
 .paragraph {
@@ -119,10 +119,6 @@ main {
   margin: 50px 200px;
 }
 
-.title-class {
-  border-bottom: 4px solid var(--primary-color);
-  margin-bottom: 20px;
-}
 
 /*-------------------------- carousel------------------------------ */
 .picture-carousel {
@@ -328,7 +324,7 @@ main {
 .info-box {
   flex: 1;
   min-width: 0;
-  padding: 10px 15px;
+  padding: 35px 20px;
   text-align: center;
   width: calc(20% - 100px);
   border-radius: 0px;
@@ -383,10 +379,6 @@ main {
   padding: 0px 220px;
 }
 
-/* .title-class {
-    border-bottom: 4px solid #182e59;
-    margin-bottom: 20px;
-} */
 
 /* ----------------------------team members------------------------------- */
 .team-section {
@@ -399,7 +391,7 @@ main {
 
 .team-header {
   background-color: #bcd2eb;
-  padding: 30px 0px 120px 0px;
+  padding: 30px 0px 140px 0px;
   position: relative;
   z-index: 1;
 }
@@ -458,13 +450,21 @@ main {
   text-decoration: none;
   border-radius: 20px;
   font-size: 14px;
-  transition: background 0.3s, color 0.3s;
+  background-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .details-btn:hover {
   background-color: #1a3365;
   color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(26, 51, 101, 0.2);
 }
+
 
 
 /*-------------------------- View all Button for News & Notice(REUSE)------------------ */
@@ -535,11 +535,14 @@ main {
 .image-container {
   position: relative;
   overflow: hidden;
+  height: 180px;
+  /* Fixed height for consistency */
 }
 
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -563,6 +566,12 @@ main {
   font-weight: 500;
   padding: 12px;
   color: #1a3365;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .news-item:hover img {
@@ -603,9 +612,7 @@ main {
   cursor: pointer;
   outline: none;
   width: 40px;
-  /* width of each line dot */
   height: 4px;
-  /* height of each line dot */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,7 +632,6 @@ main {
   transform: scaleY(1.2);
 }
 
-/* News-board slider track for smooth sliding animation */
 .news-slider-track {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -634,7 +640,6 @@ main {
   overflow: hidden;
 }
 
-/* Fade-in animation for news-board items */
 .news-fade-in {
   opacity: 0;
   animation: newsFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -680,8 +685,10 @@ main {
   align-items: center;
   border-bottom: 1px solid #eee;
   padding: 12px 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #1a3365;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
 .notice-list li:last-child {
@@ -697,8 +704,22 @@ main {
 
 .notice-text {
   flex-grow: 1;
-  padding-left: 10px;
   font-weight: 500;
+  padding-left: 10px;
+}
+
+.read-more-btn {
+  text-decoration: none;
+  color: #1a3365;
+  font-size: 0.9em;
+  padding: 6px 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.read-more-btn:hover {
+  color: #4caf50;
 }
 
 /* Optional scrollbar styling */
@@ -710,6 +731,9 @@ main {
   background-color: #b3c0d1;
   border-radius: 3px;
 }
+
+
+
 
 /* -----------------------Event Calendar Section ----------------------------*/
 .event-calendar-section {
@@ -799,25 +823,34 @@ main {
 
 /* ============================== 1400px and below =============================== */
 @media screen and (max-width: 1400px) {
+    #ewuHome {
+    height: 85vh;
+  }
   .presentation-message h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin: 0;
   }
 
-  .presentation-message p {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+     .presentation-message p {
+        font-size: 1.9rem;
+        padding-top: 15px;
+        text-align: center;
+    }
 
   .edc-sicip,
   .edc-vision,
   .news-board,
   .event-calendar-section,
-  .notice-board,
-  .carousel-container {
+  .notice-board {
     padding: 0 25px;
     box-sizing: border-box;
     margin: 50px 90px;
+  }
+
+  .carousel-container {
+    padding: 0 25px;
+    box-sizing: border-box;
+    margin: 30px 0px;
   }
 
   .carousel {
@@ -882,33 +915,33 @@ main {
   }
 
   .member img {
-    width: 150px;
-    height: 150px;
-    top: 20px;
+    width: 130px;
+    height: 130px;
+    top: 25px;
   }
 }
 
+/* ===================== 1200px and below ===================== */
+/* @media screen and (max-width: 1200px) {
+
+  #ewuHome {
+    height: 60vh;
+  }
+
+} */
+
 /* ===================== 992px and below ===================== */
 @media screen and (max-width: 992px) {
-  .title-class {
-    border-bottom: 4px solid var(--primary-color);
-    margin-bottom: 10px;
-  }
 
-  .title-class h2::before {
-    border-bottom: 34px solid #182e59;
-  }
 
-  .title-class h2 {
-    font-size: 1.2rem;
-    padding: 4px 14px;
-  }
-
-  .paragraph,
   p,
   .info-box p,
   .caption {
     font-size: 0.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
   }
 
   .edc-sicip,
@@ -922,6 +955,27 @@ main {
     margin: 50px 30px;
   }
 
+  #ewuHome {
+    height: 60vh;
+  }
+
+  #ewuImage {
+    height: 80vh;
+    filter: brightness(100%);
+    background: linear-gradient(to right,
+        rgba(22, 50, 122, 0.712),
+        rgba(21, 50, 124, 0.2));
+  }
+ .presentation-message h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+     .presentation-message p {
+        font-size: 1.5rem;
+        padding-top: 15px;
+        text-align: center;
+    }
   .info-boxes {
     display: flex;
     flex-wrap: wrap;
@@ -945,7 +999,7 @@ main {
 
   .team-members {
     gap: 5px;
-    padding: 0 60px 60px;
+    padding: 0 85px 60px;
   }
 
   .member {
@@ -970,6 +1024,16 @@ main {
     padding: 6px 20px;
   }
 
+  .notice-text {
+    font-size: 1rem;
+    flex-basis: 100%;
+    padding: 5px 0 0 0;
+  }
+
+  .read-more-btn {
+    padding: 4px 8px;
+  }
+
 }
 
 /* ===================== 768px and below ===================== */
@@ -978,7 +1042,7 @@ main {
     margin: 0;
   }
 
-  .title-class {
+  /* .title-class {
     border-bottom: 3px solid var(--primary-color);
     margin-bottom: 10px;
   }
@@ -990,7 +1054,7 @@ main {
   .title-class h2 {
     font-size: 1.1rem;
     padding: 3px 12px;
-  }
+  } */
 
   #ewuHome {
     height: 50vh;
@@ -1152,12 +1216,32 @@ main {
     min-width: 200px;
   }
 
-  /* .notice-text {
-    font-size: 1rem;
-  } */
-
   .news-item img {
     height: 140px;
+  }
+
+  .notice-list li {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .notice-date {
+    width: 100%;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+  }
+
+  .notice-text {
+    width: calc(100% - 110px);
+    font-size: 0.95rem;
+    padding-left: 0;
+    padding-bottom: 5px;
+    flex-grow: 1;
+  }
+
+  .read-more-btn {
+    margin-left: auto;
+    padding: 3px 8px;
   }
 }
 
@@ -1165,9 +1249,9 @@ main {
 /* ========================================= 480px and below ================================================== */
 @media screen and (max-width: 480px) {
 
-  .title-class h2::before {
+  /* .title-class h2::before {
     border-bottom: 30px solid #182e59;
-  }
+  } */
 
 
   #ewuHome {
@@ -1183,12 +1267,12 @@ main {
   }
 
   .presentation-message h1 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.8rem;
+    margin: 0px 0;
   }
 
   .presentation-message p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 5px 0;
   }
 
@@ -1353,7 +1437,18 @@ main {
     margin: 0 auto;
   }
 
+  .notice-board {
+    margin: 20px 10px;
+    padding: 0 10px;
+  }
+
   .notice-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .read-more-btn {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    margin-left: auto;
   }
 }

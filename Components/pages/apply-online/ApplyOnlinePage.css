@@ -1,0 +1,164 @@
+.apply-online {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Resources/images/ewuBackground/ewu1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 20px 60px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+}
+
+.text-box {
+    width: 100%;
+    max-width: 1000px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.text-box h1 {
+    font-size: 60px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.text-box p {
+    font-size: 22px;
+    margin: 12px 0 30px;
+    line-height: 1.8;
+    padding: 0 30px;
+}
+
+.apply_btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px 60px;
+    font-size: 22px;
+    background: transparent;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.5s, border 0.5s;
+}
+
+.apply_btn:hover {
+    /* border: 1px solid #6363639f; */
+    background: rgba(0, 0, 0, .59);
+}
+
+/* Devices below 1200px */
+@media (max-width: 1200px) {
+    .text-box h1 {
+        font-size: 50px;
+    }
+
+    .text-box p {
+        font-size: 20px;
+        margin: 12px 60px 30px;
+    }
+
+  .apply_btn {
+        padding: 8px 50px;
+        font-size: 20px;
+    }
+}
+
+/* Below 992px (laptops) */
+@media (max-width: 992px) {
+
+    .apply-online {
+        min-height: 80vh;
+    }
+
+    .text-box {
+        top: 55%;
+    }
+
+    .text-box h1 {
+        font-size: 42px;
+    }
+
+    .text-box p {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .apply_btn {
+        padding: 10px 50px;
+        font-size: 18px;
+    }
+}
+
+/* Below 768px (tablets) */
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 34px;
+    }
+
+    .text-box p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .apply_btn {
+        padding: 10px 40px;
+        font-size: 16px;
+    }
+}
+
+/* Below 576px (phones) */
+
+@media (max-width: 576px) {
+
+    .apply-online {
+        min-height: 70vh;
+    }
+
+    .text-box {
+        top: 55%;
+    }
+
+    .text-box h1 {
+        font-size: 28px;
+    }
+
+    .text-box p {
+        font-size: 15px;
+        padding: 0 10px;
+        margin: 12px 10px 15px;
+    }
+
+    .apply_btn {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+/* Below 375px (extra small phones) */
+@media (max-width: 375px) {
+    .text-box h1 {
+        font-size: 24px;
+    }
+
+    .text-box p {
+        font-size: 13px;
+    }
+
+    .apply_btn {
+        padding: 8px 25px;
+        font-size: 13px;
+    }
+}

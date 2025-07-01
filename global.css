@@ -6,12 +6,12 @@
 }
 
 html {
-  font-size: 16px;
+  /* font-size: 16px; */
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
   background-color: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.3;
@@ -31,6 +31,77 @@ body {
   --max-width: 1200px;
 }
 
+/* ------------------ TITLE (For Reuse)--------------*/
+
+.title-class {
+  border-bottom: 4px solid #182e59;
+  margin-bottom: 20px;
+}
+
+.title-class h2 {
+  margin: 0;
+  padding: 4px 18px;
+  color: #fff;
+  background: #182e59;
+  display: inline-block;
+  position: relative;
+}
+
+.title-class h2::before {
+  content: "";
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #182e59;
+  position: absolute;
+  right: -20px;
+  top: 0;
+}
+
+
+/* ========== 992px and below ========== */
+@media screen and (max-width: 992px) {
+  .title-class {
+    border-bottom: 4px solid #182e59;
+    margin-bottom: 10px;
+  }
+
+  .title-class h2 {
+    font-size: 1.2rem;
+    padding: 4px 14px;
+  }
+
+  .title-class h2::before {
+    border-bottom: 34px solid #182e59;
+  }
+}
+
+
+/* ========== 768px and below ========== */
+@media screen and (max-width: 768px) {
+  .title-class {
+    border-bottom: 3px solid #182e59;
+  }
+
+  .title-class h2 {
+    font-size: 1.1rem;
+    padding: 4px 12px;
+  }
+
+  .title-class h2::before {
+    border-bottom: 32px solid #182e59;
+  }
+}
+
+
+/* ========== 480px and below ========== */
+@media screen and (max-width: 480px) {
+  .title-class h2::before {
+    border-bottom: 30px solid #182e59;
+  }
+}
+
+
+
+
 /* ========== Typography ========== */
 h1,
 h2,
@@ -38,47 +109,13 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  /* color: var(--heading-color); */
   font-weight: 600;
   line-height: 1.2;
 }
 
 
 a {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ========== Layout Utilities ========== might not use it*/
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-}
-
-/* ========== Buttons ========== */
-.button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: none;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.button:hover {
-  background-color: hsl(226, 56%, 22%);
-}
-
-
-
-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 500;
 }

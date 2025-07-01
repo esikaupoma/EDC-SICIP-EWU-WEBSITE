@@ -1,8 +1,7 @@
-
-.apply-online{
+.apply-online {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Resources/images/ewuBackground/ewu1.jpg');
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Resources/images/ewuBackground/3.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +15,7 @@
     width: 90%;
     color: white;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -24,6 +23,7 @@
 
 .text-box h1 {
     font-size: 60px;
+    margin: 0px;
 }
 
 .text-box p {
@@ -52,9 +52,11 @@
     transition: 0.5s;
 }
 
+/* ========== Responsive Breakpoints ========== */
+
 @media (max-width: 1200px) {
     .text-box h1 {
-        font-size: 50px;
+        font-size: 48px;
     }
 
     .text-box p {
@@ -62,12 +64,11 @@
     }
 
     .apply_btn {
-        padding: 12px 60px;
         font-size: 20px;
+        padding: 14px 60px;
     }
 }
 
-/* Large devices (desktops, 992px to 1199px) */
 @media (max-width: 992px) {
     .text-box h1 {
         font-size: 42px;
@@ -79,61 +80,67 @@
     }
 
     .apply_btn {
-        padding: 10px 50px;
         font-size: 18px;
+        padding: 12px 50px;
     }
 }
 
-/* Medium devices (tablets, 768px to 991px) */
 @media (max-width: 768px) {
     .text-box h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .text-box p {
-        font-size: 16px;
+        font-size: 17px;
         padding: 0 15px;
     }
 
     .apply_btn {
-        padding: 10px 40px;
-        font-size: 16px;
+        font-size: 17px;
+        padding: 12px 40px;
     }
 }
 
-/* Small devices (phones, 576px to 767px) */
 @media (max-width: 576px) {
     .text-box {
         top: 55%;
     }
 
     .text-box h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .text-box p {
-        font-size: 14px;
+        font-size: 16px;
+        padding: 0 12px;
+    }
+
+    .apply_btn {
+        font-size: 16px;
+        padding: 10px 35px;
+    }
+}
+
+@media (max-width: 400px) {
+    .text-box h1 {
+        font-size: 26px;
+    }
+
+    .text-box p {
+        font-size: 15px;
         padding: 0 10px;
     }
 
     .apply_btn {
-        padding: 10px 30px;
-        font-size: 14px;
+        font-size: 15px;
+        padding: 10px 28px;
     }
 }
 
-/* Extra small devices (phones under 375px) */
-@media (max-width: 375px) {
+@media (max-width: 340px) {
     .text-box h1 {
         font-size: 24px;
     }
 
     .text-box p {
-        font-size: 13px;
-    }
-
-    .apply_btn {
-        padding: 8px 25px;
-        font-size: 13px;
-    }
-}
+        font-size: 14p

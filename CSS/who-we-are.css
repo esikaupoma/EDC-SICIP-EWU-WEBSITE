@@ -17,13 +17,14 @@ body {
     align-items: flex-end;
     gap: 30px;
     text-align: left;
-    padding: 20px;
-    background-color: #435d73;
+    padding: 20px 0px 20px;
+
 }
 
 .director-photo {
     height: 250px;
     object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 .director-info {
@@ -33,18 +34,18 @@ body {
 
 .director-info h2 {
     font-size: 22px;
-    color: #ffffff;
+    color: #838383;
     margin: 0px;
 }
 
 .director-info p {
     font-size: 18px;
-    color: #ffffff;
+    color: #838383;
     line-height: 1.2;
     margin: 0px;
 }
 
-.title-class {
+/* .title-class {
     border-bottom: 4px solid #182e59;
     margin: 20px 0px;
 }
@@ -65,7 +66,7 @@ body {
     position: absolute;
     right: -20px;
     top: 0;
-}
+} */
 
 .message-section p {
     font-size: 17px;

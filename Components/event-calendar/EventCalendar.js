@@ -2,13 +2,22 @@ class EventCalendar extends HTMLElement {
     constructor() {
         super();
         this.eventData = {
-            "2025-06-23": [
-                { title: "Orientation", color: "red", location: "Auditorium A" }
+            //event colors - red, blue, yellow
+            // yy-mm-dd
+            "2024-10-02": [
+                {
+                    title: "Orientation Program for Batch 1 & 2 ", color: "red", location: "S. M. Nousher Ali Lecture Gallery, Room # 126, East West University"
+                }
             ],
-            "2024-11-12": [
-                { title: "Event1", color: "yellow", location: "Room 101" },
-                { title: "Event2", color: "red", location: "Main Hall" },
-                { title: "Event3", color: "blue", location: "Conference Center" }
+            "2024-12-08": [
+                { title: "Celebration Ceremony of GDLFM Program", color: "yellow", location: "Manzur Elahi Auditorium, East West University" },
+            ],
+
+            "2025-01-15": [
+                { title: "Orientation Program for Batch 3 & 4", color: "blue", location: "S. M. Nousher Ali Lecture Gallery, Room # 126, East West University" },
+            ],
+            "2025-05-13": [
+                { title: "Orientation Program for Batch 5 & 6", color: "red", location: "S. M. Nousher Ali Lecture Gallery, Room # 126, East West University" },
             ]
         };
         this.currentYear = new Date().getFullYear();

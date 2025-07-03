@@ -426,23 +426,10 @@
 /* Mobile */
 @media (max-width: 768px) {
 
-  .sidebar {
-    flex: 0.1;
-    min-width: 100px;
-    padding: 8px;
-  }
-
-  .calendar {
-    flex: 0.5;
-    min-width: 200px;
-    padding: 8px;
-  }
-
-  .event {
-    flex: 0.7;
-    min-width: 180px;
-    padding: 8px;
-  }
+.calendar-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
 
 
   .month-header {

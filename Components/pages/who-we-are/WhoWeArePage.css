@@ -1,0 +1,108 @@
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 100px 0px 80px;
+}
+
+.director-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 30px;
+    text-align: left;
+    padding: 20px 0px 40px;
+}
+
+.director-photo {
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.director-info {
+    margin: 0;
+    align-self: flex-end;
+}
+
+.director-info h2 {
+    font-size: 1.2rem;
+    color: #2b4983;
+    margin: 0px;
+}
+
+.director-info p {
+    font-size: 1rem;
+    color: #2b4983;
+    line-height: 1.2;
+    margin: 0px;
+}
+
+.message-section p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* ============================ 1200px and below ============================ */
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+        padding: 100px 100px 80px;
+    }
+
+
+}
+
+
+/* ============================ 992px and below ============================ */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 100px 80px 50px;
+    }
+
+    .director-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .director-info p {
+        font-size: 0.9rem;
+    }
+
+    .message-section p {
+        font-size: 1rem;
+    }
+}
+
+
+/* ============================ 768px and below ============================ */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 100px 50px 30px;
+    }
+
+    .director-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .director-photo {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .director-info {
+        align-self: center;
+    }
+
+}
+
+
+/* ============================ 480px and below ============================ */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 80px 20px 30px;
+    }
+}

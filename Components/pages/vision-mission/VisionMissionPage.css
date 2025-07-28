@@ -1,13 +1,12 @@
 .vm-container {
-    font-family: "Poppins", Helvetica, Arial, sans-serif;
     max-width: 1000px;
     margin: 50px auto;
-    padding: 30px 20px;
+    padding: 120px 20px 30px;
 }
 
 
 .vm-section {
-    margin-bottom: 30px;
+    margin-top: 40px;
 }
 
 .vm-section h3 {
@@ -20,7 +19,7 @@
 .vm-section ul {
     font-size: 1.2rem;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.3;
     text-align: justify;
 }
 
@@ -37,14 +36,20 @@
 /* 1200px and below */
 @media screen and (max-width: 1200px) {
 
-    .vm-section p,
-    .vm-section ul {
-        font-size: 1.1rem;
+    .vm-container {
+        padding: 120px 100px 30px;
     }
 }
 
 /* 992px and below */
 @media screen and (max-width: 992px) {
+    .vm-container {
+        padding: 100px 80px 30px;
+    }
+
+    .vm-section h3 {
+        font-size: 1.2rem;
+    }
 
     .vm-section p,
     .vm-section ul {
@@ -55,27 +60,16 @@
 /* 768px and below */
 @media screen and (max-width: 768px) {
 
-    .vm-section p,
-    .vm-section ul {
-        font-size: 0.9rem;
+    .vm-container {
+        padding: 100px 40px 30px;
     }
 }
 
-/* 576px and below */
-@media screen and (max-width: 576px) {
-
-    .vm-section p,
-    .vm-section ul {
-        font-size: 0.85rem;
-    }
-
-}
 
 /* 375px and below */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
 
-    .vm-section p,
-    .vm-section ul {
-        font-size: 0.8rem;
+    .vm-container {
+        padding: 80px 20px 30px;
     }
 }

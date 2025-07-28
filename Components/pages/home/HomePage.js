@@ -45,7 +45,7 @@ class HomePage extends HTMLElement {
       slideshowInterval = setInterval(() => {
         slideIndex = (slideIndex + 1) % slides.length;
         showSlides();
-      }, 3000);
+      }, 4000); // 4000 milliseconds = 4 seconds
     }
 
     function stopSlideshow() {
@@ -84,9 +84,7 @@ class HomePage extends HTMLElement {
       let visibleCount = 1;
 
       function updateVisibleCount() {
-        const containerWidth = newsCarouselBoard.offsetWidth;
-        const itemWidth = newsItemsBoard[0]?.offsetWidth || 250;
-        visibleCount = Math.floor(containerWidth / itemWidth) || 1;
+        visibleCount = 5; // Always show 4 items per slide regardless of screen width
       }
 
       function showNewsBoard(index) {

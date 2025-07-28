@@ -1,0 +1,143 @@
+.committee-section {
+    padding: 230px 150px 170px;
+    text-align: center;
+    background-image: url(/Resources/images/pscBackground/b1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.committee-header {
+    max-width: 1300px;
+    margin: 0 auto 50px;
+}
+
+.committee-header h2 {
+    font-size: 2rem;
+    color: #ffffffe0;
+    margin-bottom: 15px;
+}
+
+.committee-description {
+    color: #ffffffe0;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* max-width: 1500px; */
+    margin: 0 auto;
+}
+
+.member {
+    background-color: #ffffff3d;
+    padding: 25px 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex: 0 1 300px;
+    border: 2px solid #546b85;
+}
+
+/* .member:hover {
+    transform: translateY(-5px);
+} */
+
+.member img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    /* border-radius: 50%; */
+    margin-bottom: 15px;
+    border: 4px solid #ec9c13;
+}
+
+.member h3 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.member p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    /* line-height: 1.4; */
+}
+
+/* ============================ 1400px and below ============================ */
+@media screen and (max-width: 1400px) {
+    .committee-section {
+        padding: 200px 150px 150px;
+    }
+
+}
+
+/* ============================ 1200px and below ============================ */
+@media screen and (max-width: 1200px) {
+    .committee-section {
+        padding: 200px 50px 150px;
+    }
+
+}
+
+
+/* ============================ 992px and below ============================ */
+@media screen and (max-width: 992px) {
+    .member img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .committee-section {
+        padding: 180px 30px 130px;
+    }
+
+    .committee-description {
+        font-size: 1rem;
+    }
+
+    .committee-header h2 {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+
+    .member h3 {
+        font-size: 0.9rem;
+    }
+
+
+}
+
+
+/* ============================ 768px and below ============================ */
+@media screen and (max-width: 768px) {
+    .committee-section {
+        padding: 180px 20px 130px;
+    }
+
+
+}
+
+
+/* ============================ 480px and below ============================ */
+@media screen and (max-width: 480px) {
+    .committee-section {
+        padding: 150px 20px 80px;
+    }
+
+    .committee-description {
+        font-size: 0.9rem;
+    }
+
+    .committee-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .member p {
+        font-size: 0.8rem;
+    }
+
+}

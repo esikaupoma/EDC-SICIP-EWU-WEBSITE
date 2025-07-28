@@ -7,7 +7,7 @@ main {
 
 #ewuHome {
   position: relative;
-  height: 70vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@ main {
 .presentation-message p {
   font-size: 2em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  margin: 0px;
+  margin-top: 20px;
 }
 
 .apply-now-btn {
@@ -82,30 +82,6 @@ main {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ---------------------------- TITLE (For Reuse)--------------------------------*/
-
-/* .title-class {
-  border-bottom: 4px solid #182e59;
-  margin-bottom: 20px;
-}
-
-.title-class h2 {
-  margin: 0;
-  padding: 3px 18px;
-  color: #fff;
-  background: #182e59;
-  display: inline-block;
-  position: relative;
-}
-
-.title-class h2::before {
-  content: "";
-  border-right: 20px solid transparent;
-  border-bottom: 40px solid #182e59;
-  position: absolute;
-  right: -20px;
-  top: 0;
-} */
 
 /* ---------------------------- Paragraph (For Reuse)--------------------------------*/
 .paragraph {
@@ -123,7 +99,7 @@ main {
 /*-------------------------- carousel------------------------------ */
 .picture-carousel {
   width: 100%;
-  padding: 20px;
+  padding: 40px 20px;
   background: linear-gradient(to right, #f3f4f6, #e5e7eb);
   box-sizing: border-box;
   margin-bottom: 30px;
@@ -131,18 +107,20 @@ main {
 
 .carousel-container {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  /* align-items: flex-start; */
   max-width: 1200px;
   margin: 0 auto;
+  gap: 20px;
 }
 
+
 .carousel {
+  flex: 2;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 400px;
 }
 
 .carousel-track {
@@ -168,6 +146,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 1px solid whitesmoke;
 }
 
 .fade {
@@ -240,11 +219,11 @@ main {
   /* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.25); */
 }
 
-/* Same side-box styling as before */
 .admission {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .side-box-container {
@@ -258,8 +237,10 @@ main {
   background-color: #b3d9f8;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 30px 35px;
+  padding: 35px 35px;
+  margin: 0;
 }
+
 
 .side-box h3 {
   font-size: 22px;
@@ -268,7 +249,7 @@ main {
 }
 
 .side-box p {
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 15px;
   color: #333;
 }
@@ -317,7 +298,7 @@ main {
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 10px;
-  padding: 0 100px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
@@ -365,20 +346,15 @@ main {
 
 .info-box p {
   color: hsl(0, 0%, 100%);
-  font-size: 15px;
+  font-size: 1rem;
 }
 
-.info-box:hover {
-  transform: translateY(-5px);
-}
 
 /* ----------------------------EDC'S VISION--------------------------------*/
 .edc-vision {
-  margin: 50px 60px;
-  /* border: 1px solid black; */
-  padding: 0px 220px;
+  margin: 50px 200px;
+  /* padding: 50px 220px; */
 }
-
 
 /* ----------------------------team members------------------------------- */
 .team-section {
@@ -391,7 +367,7 @@ main {
 
 .team-header {
   background-color: #bcd2eb;
-  padding: 30px 0px 140px 0px;
+  padding: 50px 0px 140px 0px;
   position: relative;
   z-index: 1;
 }
@@ -488,8 +464,8 @@ main {
 /* ---------------------------News-------------------------------- */
 
 .news-board {
-  margin: 50px 60px;
-  padding: 0px 220px;
+  margin: 50px 200px;
+  /* padding: 0px 220px; */
 }
 
 .news-title-bar {
@@ -503,10 +479,10 @@ main {
   justify-content: center;
   gap: 20px;
   overflow: hidden;
-  /* Hides scrollbar */
   padding-bottom: 10px;
   transition: transform 0.6s ease-in-out;
   will-change: transform;
+  flex-wrap: wrap;
 }
 
 .news-carousel::-webkit-scrollbar {
@@ -524,7 +500,7 @@ main {
 
 .news-item {
   flex: 0 0 auto;
-  width: 250px;
+  width: 270px;
   background-color: white;
   /* border-radius: 6px; */
   overflow: hidden;
@@ -611,25 +587,29 @@ main {
   padding: 0;
   cursor: pointer;
   outline: none;
-  width: 40px;
-  height: 4px;
+  width: 35px;
+  height: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.slick-dots button span:hover {
+  background: #3e64b1;
 }
 
 .slick-dots button span {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 3px;
   background: #b3c0d1;
-  transition: background 0.3s ease, transform 0.3s ease;
+  /* transition: background 0.3s ease, transform 0.3s ease; */
 }
 
 .slick-dots li.slick-active button span {
   background: #1a3365;
-  transform: scaleY(1.2);
+  /* transform: scaleY(1.2); */
 }
 
 .news-slider-track {
@@ -658,8 +638,8 @@ main {
 /* -----------------------Notice Board Section ----------------------------*/
 
 .notice-board {
-  margin: 50px 60px;
-  padding: 0px 220px;
+  margin: 50px 200px;
+  /* padding: 0px 220px; */
 }
 
 .notice-board .title-class {
@@ -737,19 +717,26 @@ main {
 
 /* -----------------------Event Calendar Section ----------------------------*/
 .event-calendar-section {
-  margin: 50px 60px;
-  padding: 0px 220px;
+  margin: 50px 200px;
+  /* padding: 0px 220px; */
 }
 
+
+
+
+
+
+/* ============================== 1400px and below =============================== */
 @media screen and (max-width: 1400px) {
+
   .presentation-message h1 {
-    font-size: 3em;
+    /* font-size: 3em; */
     margin: 0;
   }
 
   .presentation-message p {
-    font-size: 1.5em;
-    text-align: center;
+    /* font-size: 1.5em; */
+    margin-top: 20PX;
   }
 
   .edc-sicip,
@@ -757,31 +744,13 @@ main {
   .news-board,
   .event-calendar-section,
   .notice-board {
-    /* margin: 50px 90px; */
-    padding: 0 10px;
+    margin: 50px 150px;
+    padding: 0px;
     box-sizing: border-box;
   }
 
-  .carousel-container {
-    gap: 15px;
-    padding: 0 15px;
-  }
-
   .carousel {
-    flex: 1.5;
-    max-width: 900px;
-  }
-
-  .admission {
-    flex: 1;
-  }
-
-  .side-box h3 {
-    font-size: 1.2rem;
-  }
-
-  .side-box p {
-    font-size: 14px;
+    height: 380px;
   }
 
   .button {
@@ -792,6 +761,7 @@ main {
 
   .info-box {
     width: calc(30% - 14px);
+    padding: 40px 20px;
   }
 
   .news-item {
@@ -810,6 +780,10 @@ main {
     font-size: 1.2rem;
   }
 
+  .team-header {
+    padding: 60px 0px 140px 0px;
+  }
+
   .member h3 {
     font-size: 1rem;
   }
@@ -821,49 +795,46 @@ main {
 
 
 
-/* ============================== 1400px and below =============================== */
-@media screen and (max-width: 1400px) {
-    #ewuHome {
+/* ============================== 1200px and below =============================== */
+@media screen and (max-width: 1200px) {
+  #ewuHome {
     height: 85vh;
   }
+
   .presentation-message h1 {
     font-size: 5rem;
     margin: 0;
   }
 
-     .presentation-message p {
-        font-size: 1.9rem;
-        padding-top: 15px;
-        text-align: center;
-    }
+  .presentation-message p {
+    font-size: 1.9rem;
+    padding-top: 15px;
+    text-align: center;
+  }
 
   .edc-sicip,
   .edc-vision,
   .news-board,
   .event-calendar-section,
   .notice-board {
-    padding: 0 25px;
     box-sizing: border-box;
-    margin: 50px 90px;
-  }
-
-  .carousel-container {
-    padding: 0 25px;
-    box-sizing: border-box;
-    margin: 30px 0px;
+    margin: 50px 100px;
   }
 
   .carousel {
-    flex: 1.5;
-    max-width: 900px;
-  }
-
-  .admission {
-    flex: 1;
+    height: 365px;
   }
 
   .side-box h3 {
     font-size: 1.2rem;
+  }
+
+  .side-box-container {
+    gap: 16px;
+  }
+
+  .side-box {
+    padding: 37px 30px;
   }
 
   .side-box p,
@@ -880,11 +851,11 @@ main {
 
   .info-box {
     width: calc(30% - 14px);
-
+    padding: 15px 15px;
   }
 
   .info-boxes {
-    gap: 5px;
+    /* gap: 5px; */
     padding: 0 15px;
   }
 
@@ -902,6 +873,10 @@ main {
 
   .member h3 {
     font-size: 1rem;
+  }
+
+  .team-header {
+    padding: 60px 0px 110px 0px;
   }
 
   .team-members {
@@ -921,14 +896,6 @@ main {
   }
 }
 
-/* ===================== 1200px and below ===================== */
-/* @media screen and (max-width: 1200px) {
-
-  #ewuHome {
-    height: 60vh;
-  }
-
-} */
 
 /* ===================== 992px and below ===================== */
 @media screen and (max-width: 992px) {
@@ -941,18 +908,16 @@ main {
   }
 
   .paragraph {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .edc-sicip,
   .edc-vision,
   .news-board,
   .event-calendar-section,
-  .notice-board,
-  .carousel-container {
-    padding: 0 15px;
+  .notice-board {
     box-sizing: border-box;
-    margin: 50px 30px;
+    margin: 40px 60px;
   }
 
   #ewuHome {
@@ -960,32 +925,63 @@ main {
   }
 
   #ewuImage {
-    height: 80vh;
+    height: 90vh;
     filter: brightness(100%);
     background: linear-gradient(to right,
         rgba(22, 50, 122, 0.712),
         rgba(21, 50, 124, 0.2));
   }
- .presentation-message h1 {
+
+  .presentation-message h1 {
     font-size: 4rem;
     margin: 0;
   }
 
-     .presentation-message p {
-        font-size: 1.5rem;
-        padding-top: 15px;
-        text-align: center;
-    }
+  .presentation-message p {
+    font-size: 1.5rem;
+    padding-top: 15px;
+    text-align: center;
+    margin: 0px;
+  }
+
+  .apply-now-btn {
+    margin-top: 60px;
+  }
+
+  .carousel-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .carousel {
+    flex: 2.3;
+    height: 320px;
+  }
+
+  .admission {
+    flex: 1;
+  }
+
+  .side-box-container {
+    gap: 16px;
+  }
+
+  .side-box {
+    padding: 25px 20px;
+  }
+
   .info-boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
+
   .info-box {
     flex: 0 0 calc(25% - 5px);
     max-width: calc(25% - 5px);
-    padding: 5px 15px;
+    padding: 20px 15px;
   }
 
   .info-box .material-icons {
@@ -994,7 +990,6 @@ main {
 
   .info-box h3 {
     font-size: 1.1rem;
-    margin: 0px;
   }
 
   .team-members {
@@ -1036,25 +1031,11 @@ main {
 
 }
 
-/* ===================== 768px and below ===================== */
+/* ============================== 768px and below ============================== */
 @media screen and (max-width: 768px) {
   main {
     margin: 0;
   }
-
-  /* .title-class {
-    border-bottom: 3px solid var(--primary-color);
-    margin-bottom: 10px;
-  }
-
-  .title-class h2::before {
-    border-bottom: 32px solid #182e59;
-  }
-
-  .title-class h2 {
-    font-size: 1.1rem;
-    padding: 3px 12px;
-  } */
 
   #ewuHome {
     height: 50vh;
@@ -1080,13 +1061,14 @@ main {
   }
 
   .presentation-message h1 {
-    font-size: 1.9rem;
+    font-size: 2.9rem;
     margin: 2px 15px;
   }
 
   .presentation-message p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin: 2px 15px;
+    padding: 0px;
   }
 
   .apply-now-btn {
@@ -1101,9 +1083,8 @@ main {
   .event-calendar-section,
   .notice-board,
   .carousel-container {
-    padding: 0 15px;
     box-sizing: border-box;
-    margin: 50px 10px;
+    margin: 40px 40px
   }
 
   .carousel-container {
@@ -1115,6 +1096,10 @@ main {
   .admission {
     width: 100%;
     padding: 0;
+  }
+
+  .picture-carousel {
+    padding: 5px 20px;
   }
 
   .carousel {
@@ -1144,6 +1129,7 @@ main {
     flex: 1;
     min-width: 240px;
     max-width: 400px;
+    padding: 35px 20px;
   }
 
   .side-box h3 {
@@ -1157,22 +1143,17 @@ main {
   }
 
   .button {
-    width: 140px;
+    /* width: 140px; */
     font-size: 0.875rem;
-    padding: 8px 20px;
+    padding: 5px 8px;
   }
 
-  .info-boxes {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  }
 
   .info-box {
-    width: 80%;
-    max-width: 400px;
+    flex: 0 0 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+    padding: 25px 25px;
   }
-
 
   .team-members {
     display: grid;
@@ -1183,7 +1164,7 @@ main {
   }
 
   .team-header {
-    padding: 10px 0px 65px 0px;
+    padding: 40px 0px 75px 0px;
   }
 
   .member {
@@ -1249,11 +1230,6 @@ main {
 /* ========================================= 480px and below ================================================== */
 @media screen and (max-width: 480px) {
 
-  /* .title-class h2::before {
-    border-bottom: 30px solid #182e59;
-  } */
-
-
   #ewuHome {
     height: 55vh;
   }
@@ -1265,18 +1241,20 @@ main {
         rgba(22, 50, 122, 0.712),
         rgba(21, 50, 124, 0.2));
   }
-.presentation-message{
-  margin-top: 120px;
-}
+
+  .presentation-message {
+    margin-top: 120px;
+  }
+
   .presentation-message h1 {
     font-size: 1.8rem;
-    margin: 0px 0;
+    margin: 0;
   }
 
   .presentation-message p {
     font-size: 0.9rem;
     margin: 5px 0;
-    padding: 0px;
+    padding: 0;
   }
 
   .apply-now-btn {
@@ -1291,29 +1269,49 @@ main {
   .event-calendar-section,
   .notice-board,
   .carousel-container {
-    padding: 0 10px;
-    margin: 30px 5px;
+    margin: 30px 20px;
+  }
+
+  .picture-carousel {
+    padding: 20px 10px;
   }
 
   .carousel-container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .side-box-container {
+    align-items: center;
     gap: 10px;
   }
 
-  .carousel,
-  .admission {
+  .side-box {
     width: 100%;
-    padding: 0;
+    max-width: 350px;
+    padding: 25px 10px;
   }
 
-  .carousel {
-    aspect-ratio: 16 / 9;
+  .side-box h3 {
+    font-size: 1rem;
+  }
+
+  .side-box p,
+  .info-box p,
+  .caption {
+    font-size: 0.75rem;
+  }
+
+
+  .button {
+    width: 100px;
+    font-size: 0.75rem;
+    padding: 6px 15px;
   }
 
   .indicator-container {
     bottom: 0;
   }
-
 
   .indicator {
     width: 30px;
@@ -1328,34 +1326,6 @@ main {
     transform: translateY(-50%);
   }
 
-  .side-box-container {
-    /* flex-direction: column; */
-    align-items: center;
-    gap: 10px;
-  }
-
-  .side-box {
-    width: 100%;
-    max-width: 350px;
-    padding: 10px;
-  }
-
-  .side-box h3 {
-    font-size: 1rem;
-  }
-
-  .side-box p,
-  .info-box p,
-  .caption {
-    font-size: 0.75rem;
-  }
-
-  .button {
-    width: 100px;
-    font-size: 0.75rem;
-    padding: 6px 15px;
-  }
-
   .info-boxes {
     display: flex;
     flex-direction: column;
@@ -1365,15 +1335,14 @@ main {
 
   .info-box {
     width: 90%;
+    max-width: 320px;
     padding: 15px;
     font-size: 0.8rem;
-    max-width: 320px;
   }
 
   .info-box h3 {
     font-size: 1rem;
   }
-
 
   .team-members {
     display: grid;
@@ -1383,14 +1352,13 @@ main {
     padding: 40px 10px;
   }
 
-  /* Center the last member if it's alone in the third row */
   .team-members .member:nth-child(5) {
     grid-column: span 2;
     justify-self: center;
   }
 
   .team-header {
-    padding: 20px 0px 65px 0px;
+    padding: 20px 0 65px;
   }
 
   .member {
@@ -1408,7 +1376,7 @@ main {
 
   .member h3 {
     font-size: 0.8rem;
-    margin: 30px 10px 0px;
+    margin: 30px 10px 0;
   }
 
   .details-btn {
@@ -1430,8 +1398,8 @@ main {
   }
 
   .slick-dots {
-    gap: 0px;
-    margin: 8px 0 0 0;
+    gap: 0;
+    margin: 8px 0 0;
   }
 
   .slick-dots button span {
@@ -1454,4 +1422,6 @@ main {
     padding: 2px 6px;
     margin-left: auto;
   }
+
+
 }

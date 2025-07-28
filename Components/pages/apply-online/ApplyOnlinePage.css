@@ -55,8 +55,8 @@
 }
 
 .apply_btn:hover {
-    /* border: 1px solid #6363639f; */
-    background: rgba(0, 0, 0, .59);
+    border: 1px solid #ffffff91;
+    background: #1a73e84d;
 }
 
 /* Devices below 1200px */
@@ -70,7 +70,7 @@
         margin: 12px 60px 30px;
     }
 
-  .apply_btn {
+    .apply_btn {
         padding: 8px 50px;
         font-size: 20px;
     }

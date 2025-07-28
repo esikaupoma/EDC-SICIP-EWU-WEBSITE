@@ -84,7 +84,9 @@ class HomePage extends HTMLElement {
       let visibleCount = 1;
 
       function updateVisibleCount() {
-        visibleCount = 5; // Always show 4 items per slide regardless of screen width
+        const containerWidth = newsCarouselBoard.offsetWidth;
+        const itemWidth = newsItemsBoard[0]?.offsetWidth || 250;
+        visibleCount = Math.floor(containerWidth / itemWidth) || 1;
       }
 
       function showNewsBoard(index) {

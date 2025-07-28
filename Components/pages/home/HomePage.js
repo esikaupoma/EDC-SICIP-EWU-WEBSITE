@@ -78,7 +78,9 @@ class HomePage extends HTMLElement {
       const newsCarouselBoard = shadow.querySelector('.news-carousel');
       const newsItemsBoard = shadow.querySelectorAll('.news-carousel .news-item');
       const slickDots = shadow.querySelector('.slick-dots');
+
       if (!newsCarouselBoard || !newsItemsBoard.length || !slickDots) return;
+
       let newsIndexBoard = 0;
       let newsIntervalBoard;
       let visibleCount = 1;
@@ -91,28 +93,44 @@ class HomePage extends HTMLElement {
 
       function showNewsBoard(index) {
         updateVisibleCount();
-        newsItemsBoard.forEach((item, i) => {
+
+        const totalItems = newsItemsBoard.length;
+        const totalPages = Math.ceil(totalItems / visibleCount);
+
+        // Clamp index to prevent overflow (important after resize)
+        const maxStartIndex = (totalPages - 1) * visibleCount;
+        const start = Math.min(Math.floor(index / visibleCount) * visibleCount, maxStartIndex);
+        const end = start + visibleCount;
+
+        // Hide all
+        newsItemsBoard.forEach(item => {
+          item.style.display = 'none';
           item.classList.remove('news-fade-in');
-          if (i >= index && i < index + visibleCount) {
-            item.style.display = 'block';
-            // Trigger reflow to restart animation
-            void item.offsetWidth;
-            item.classList.add('news-fade-in');
-          } else {
-            item.style.display = 'none';
-          }
         });
+
+        // Show only the visible set
+        for (let i = start; i < end && i < totalItems; i++) {
+          const item = newsItemsBoard[i];
+          item.style.display = 'block';
+          void item.offsetWidth; // trigger reflow
+          item.classList.add('news-fade-in');
+        }
+
+        // Activate current dot
         if (slickDots) {
           Array.from(slickDots.children).forEach((li, i) => {
-            li.classList.toggle('slick-active', i === Math.floor(index / visibleCount));
+            li.classList.toggle('slick-active', i === Math.floor(start / visibleCount));
           });
         }
+
+        newsIndexBoard = start; // keep current index aligned
       }
 
       function createSlickDots() {
         updateVisibleCount();
         if (!slickDots) return;
         slickDots.innerHTML = '';
+
         const dotCount = Math.ceil(newsItemsBoard.length / visibleCount);
         for (let i = 0; i < dotCount; i++) {
           const li = document.createElement('li');
@@ -120,8 +138,11 @@ class HomePage extends HTMLElement {
           btn.type = 'button';
           btn.innerHTML = '<span></span>';
           btn.addEventListener('click', () => {
-            newsIndexBoard = i * visibleCount;
-            showNewsBoard(newsIndexBoard);
+            const targetIndex = i * visibleCount;
+            if (newsIndexBoard !== targetIndex) {
+              newsIndexBoard = targetIndex;
+              showNewsBoard(newsIndexBoard);
+            }
           });
           li.appendChild(btn);
           slickDots.appendChild(li);
@@ -130,15 +151,17 @@ class HomePage extends HTMLElement {
 
       function nextNewsBoard() {
         updateVisibleCount();
-        const dotCount = Math.ceil(newsItemsBoard.length / visibleCount);
-        const currentDot = Math.floor(newsIndexBoard / visibleCount);
-        const nextDot = (currentDot + 1) % dotCount;
-        newsIndexBoard = nextDot * visibleCount;
+        const totalPages = Math.ceil(newsItemsBoard.length / visibleCount);
+        const currentPage = Math.floor(newsIndexBoard / visibleCount);
+        const nextPage = (currentPage + 1) % totalPages;
+        newsIndexBoard = nextPage * visibleCount;
         showNewsBoard(newsIndexBoard);
       }
+
       function startNewsAutoBoard() {
         newsIntervalBoard = setInterval(nextNewsBoard, 5000);
       }
+
       function stopNewsAutoBoard() {
         clearInterval(newsIntervalBoard);
       }
@@ -146,8 +169,17 @@ class HomePage extends HTMLElement {
       // Pause on hover
       newsCarouselBoard.addEventListener('mouseenter', stopNewsAutoBoard);
       newsCarouselBoard.addEventListener('mouseleave', startNewsAutoBoard);
+
       window.addEventListener('resize', () => {
-        createSlickDots();
+        const prevVisible = visibleCount;
+        updateVisibleCount();
+
+        // Only recreate dots if count changes
+        if (prevVisible !== visibleCount) {
+          createSlickDots();
+        }
+
+        // Reset index to show a valid group
         showNewsBoard(newsIndexBoard = 0);
       });
 
@@ -157,7 +189,7 @@ class HomePage extends HTMLElement {
       startNewsAutoBoard();
     }
 
-    // Run immediately if possible, otherwise wait for .slick-dots
+    // Wait for component if not loaded yet
     if (shadow.querySelector('.news-carousel') && shadow.querySelector('.slick-dots')) {
       setupSlickDotsNewsBoard();
     } else {
@@ -167,8 +199,9 @@ class HomePage extends HTMLElement {
           setupSlickDotsNewsBoard();
         }
       });
-
+      observer.observe(shadow, { childList: true, subtree: true });
     }
+
   }
 }
 

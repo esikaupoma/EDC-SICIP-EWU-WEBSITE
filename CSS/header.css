@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    background-color: hsl(226, 56%, 27%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 0;
+}
+
+nav {
+    background-color: hsl(0, 100%, 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    border-bottom: solid 2px;
+    font-weight: bold;
+}
+
+/* Institutional Logos */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#siciplogo {
+    width: 80px;
+    height: 55px;
+    margin-right: 10px;
+}
+
+#govtlogo {
+    width: 55px;
+    margin-right: 10px;
+}
+
+#ewulogo {
+    width: 70px;
+    margin-right: 10px;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-item a {
+    color: hsl(226, 56%, 27%);
+    position: relative;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: hsl(226, 56%, 27%);
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+
+}
+
+.nav-item a:active::after {
+    background-color: hsl(0, 0%, 50%);
+    width: 100%;
+    transition: 0.1s;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    z-index: 1000;
+    padding: 15px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    min-width: max-content;
+}
+
+.dropdown-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-item:hover .dropdown-menu,
+.dropdown-menu:hover {
+    max-height: 300px;
+    opacity: 1;
+    padding: 15px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: hsl(226, 56%, 27%);
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu Animation */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Notice Bar */
+.notice-bar {
+    background-color: hsl(226, 56%, 27%);
+    color: hsl(69, 100%, 66%);
+    font-size: 17px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 2px solid hsl(0, 0%, 100%);
+}
+
+.notice-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 30s linear infinite;
+    padding-top: 15px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/*-------------------- Main Content ---------------------------------*/
+/* Main content styling */
+main {
+    margin-top: 80px;
+}
+
+#ewuHome {
+    display: flex;
+    justify-content: space-between;
+    height: 55vh;
+    background-color: #02153d;
+}
+
+.left-section,
+.carousel-section,
+.right-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.left-section {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Vertically center the content inside the section */
+    padding: 0 20px;
+    background-image: url('../Resources/ewuBackground/ewu.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Center the image vertically and horizontally */
+    height: 90%;
+    margin: 22px 5px 0px 0px;
+
+}
+
+.presentation-message {
+    color: #ffffff;
+    text-align: center;
+}
+
+.presentation-message h1 {
+    font-size: 58px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.presentation-message p {
+    font-size: 18px;
+    color: #eece76;
+    margin-top: 10px;
+}
+
+
+/* Carousel Section Styling */
+.carousel-section {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* padding: 0 100px; */
+}
+
+.slideshow-container {
+    width: 100%;
+    /* height: 450px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 4px solid rgb(203, 211, 130);
+}
+
+/* Indicator Styling */
+.indicator-container {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator {
+    display: inline-block;
+    width: 40px;
+    height: 4px;
+    background-color: #c5c5c5;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #3f4c68;
+}
+
+/* Navigation buttons styling */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    transform: translateY(-50%);
+    z-index: 1;
+
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #3f4552;
+    opacity: 0.8;
+}
+
+
+/* Right Section Styling */
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 8px;
+}
+
+.side-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+
+.side-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    justify-content: center;
+    /* Vertically center the content */
+    align-items: center;
+    /* Horizontally center the content */
+    background-color: #b3d9f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.side-box p {
+    margin-bottom: 20px;
+}
+
+
+.side-box .button-container {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the buttons */
+    gap: 5px;
+}
+
+
+.button {
+    font-size: 14px;
+    padding: 10px 10px;
+    background-color: hsl(226, 56%, 27%);
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2dbb02;
+    color: #ffffff;
+    outline: 1px solid white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #ewuHome {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .carousel-section,
+    .right-section {
+        width: 100%;
+    }
+
+    .slideshow-container {
+        height: 300px;
+    }
+}

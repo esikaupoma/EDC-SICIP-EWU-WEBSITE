@@ -1,0 +1,131 @@
+<header>
+  <!-- Bootstrap navbar with offcanvas for mobile -->
+  <nav class="navbar navbar-expand-lg bg-white py-2" aria-label="Main navigation">
+    <div class="container-fluid align-items-center">
+      <div class="d-flex align-items-center logo-container me-3">
+        <a href="https://sicip.gov.bd/#" target="_blank" class="d-inline-block me-2">
+          <img src="Resources/images/Logo/SICIPLogo.png" alt="SICIP Logo" id="siciplogo" class="logo" loading="lazy" />
+        </a>
+        <a href="#" class="d-inline-block me-2">
+          <img src="Resources/images/Logo/GovtLogo.png" alt="Govt Logo" id="govtlogo" class="logo" loading="lazy" />
+        </a>
+        <a href="https://www.ewubd.edu/" target="_blank" class="d-inline-block">
+          <img src="Resources/images/Logo/EWULogo.png" alt="EWU Logo" id="ewulogo" class="logo" loading="lazy" />
+        </a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas"
+        aria-controls="mainOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><button class="btn btn-link nav-link" data-page="home">Home</button></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">About Us</a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><button class="dropdown-item" data-page="who-we-are">Who We Are</button></li>
+              <li><button class="dropdown-item" data-page="vision-mission">Vision &amp; Mission</button></li>
+              <li><button class="dropdown-item" data-page="p-s-c">Project Standing Committee</button></li>
+              <li><button class="dropdown-item" data-page="edc-sicip-officials">EDC-SICIP Officials</button></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><button class="btn btn-link nav-link" data-page="courses">Courses</button></li>
+          <li class="nav-item"><button class="btn btn-link nav-link" data-page="partners">Partners</button></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">News &amp; Notice</a>
+            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+              <li><button class="dropdown-item" data-page="news">News</button></li>
+              <li><button class="dropdown-item" data-page="notice-board">Notice Board</button></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><button class="btn btn-link nav-link" data-page="gallery">Gallery</button></li>
+          <li class="nav-item"><button class="btn btn-link nav-link" data-page="contact">Contact Us</button></li>
+        </ul>
+      </div>
+
+      <!-- Offcanvas for mobile -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mainOffcanvas" aria-labelledby="mainOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mainOffcanvasLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="list-unstyled">
+            <li class="mb-2"><button class="btn btn-link w-100 text-start" data-page="home">Home</button></li>
+            <li class="mb-2">
+              <div class="accordion" id="mobileAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingAbout">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout">About
+                      Us</button>
+                  </h2>
+                  <div id="collapseAbout" class="accordion-collapse collapse" aria-labelledby="headingAbout"
+                    data-bs-parent="#mobileAccordion">
+                    <div class="accordion-body p-0">
+                      <ul class="list-unstyled ps-3">
+                        <li><button class="btn btn-link w-100 text-start" data-page="who-we-are">Who We Are</button>
+                        </li>
+                        <li><button class="btn btn-link w-100 text-start" data-page="vision-mission">Vision &amp;
+                            Mission</button></li>
+                        <li><button class="btn btn-link w-100 text-start" data-page="p-s-c">Project Standing
+                            Committee</button></li>
+                        <li><button class="btn btn-link w-100 text-start" data-page="edc-sicip-officials">EDC-SICIP
+                            Officials</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="mb-2"><button class="btn btn-link w-100 text-start" data-page="courses">Courses</button></li>
+            <li class="mb-2"><button class="btn btn-link w-100 text-start" data-page="partners">Partners</button></li>
+
+            <li class="mb-2">
+              <div class="accordion" id="mobileAccordion2">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingNews">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseNews" aria-expanded="false" aria-controls="collapseNews">News &amp;
+                      Notice</button>
+                  </h2>
+                  <div id="collapseNews" class="accordion-collapse collapse" aria-labelledby="headingNews"
+                    data-bs-parent="#mobileAccordion2">
+                    <div class="accordion-body p-0">
+                      <ul class="list-unstyled ps-3">
+                        <li><button class="btn btn-link w-100 text-start" data-page="news">News</button></li>
+                        <li><button class="btn btn-link w-100 text-start" data-page="notice-board">Notice Board</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="mb-2"><button class="btn btn-link w-100 text-start" data-page="gallery">Gallery</button></li>
+            <li class="mb-2"><button class="btn btn-link w-100 text-start" data-page="contact">Contact Us</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="notice-bar">
+    <div class="notice-content">
+      <a href="Resources/files/Newspaper Ads.pdf" target="_blank" style="color: inherit; text-decoration: none;">
+        Important Notice: Graduate Diploma in Leather, Leather Goods & Footwear Management for Batch-7 and Batch-8
+        (Last Date of Application: 19 August 2025)
+      </a>
+    </div>
+  </div>
+</header>

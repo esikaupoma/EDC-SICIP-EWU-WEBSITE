@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 16px; */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  /* background-color: var(--secondary-color);
+  color: var(--text-color); */
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+/* ========== CSS Variables ========== */
+:root {
+  --primary-color: #f36b3c;
+  /* Orange for buttons and highlights */
+  --secondary-color: #0b3b57;
+  /* Dark blue for header, footer, text */
+  --background-color: #f4f8fb;
+  /* Light blue / section background */
+  --text-color: #ffffff;
+  /* White text */
+  --accent-color: #dce2e8;
+  /* Gray for borders, subtle text */
+}
+
+
+/* ------------------ TITLE (New Professional Design)--------------*/
+.title-class {
+  margin: 10px 0;
+  text-align: left;
+  /* change to center if needed */
+  position: relative;
+}
+
+.title-class h2 {
+  /* font-family: 'Merriweather', serif; */
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #192F59;
+  position: relative;
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+/* Decorative bottom line */
+.title-class h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #eba453;
+  /* accent color */
+  border-radius: 2px;
+}
+
+/* Responsive scaling */
+@media screen and (max-width: 992px) {
+  .title-class h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-class h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ========== Typography ========== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* color: var(--heading-color); */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+
+a {
+  /* color: var(--primary-color); */
+  text-decoration: none;
+}

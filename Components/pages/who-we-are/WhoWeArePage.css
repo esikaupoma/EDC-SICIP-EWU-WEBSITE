@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("/Resources/images/who_we_are_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(6px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.director-section {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+
+
+}
+
+.director-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* border-radius: 50%; */
+    border: 5px solid #ffc107;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.director-photo:hover {
+    transform: scale(1.05);
+}
+
+.director-info h2 {
+    font-weight: 700;
+    color: #1a3365;
+}
+
+.director-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.message-section {
+    background: #21546d;
+    padding: 40px;
+    /* border-radius: 15px; */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 1s ease;
+    /* color: white; */
+}
+
+.message-section p {
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: justify;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title-class h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1a3365;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-class h2::before,
+.title-class h2::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background: #ffc107;
+    margin: 0 15px;
+    border-radius: 2px;
+    max-width: 50px;
+}

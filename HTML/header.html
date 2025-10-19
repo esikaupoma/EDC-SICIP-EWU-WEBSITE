@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduate Diploma in Leather and Footwear Management</title>
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="../Resources/Logo/SICIPLogo.png" alt="SICIP Logo" id="siciplogo" class="logo" />
+                <img src="../Resources/Logo/GovtLogo.png" alt="Govt Logo" id="govtlogo" class="logo" />
+                <img src="../Resources/Logo/EWULogo.png" alt="EWU Logo" id="ewulogo" class="logo" />
+            </div>
+
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-bar">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#about">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="#who-we-are">Who We Are</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#vision-mission">Vision &amp; Mission</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#standing-committee">Project Standing Committee</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#edc-officials">EDC-SICIP Officials</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#courses">Courses</a></li>
+                <li class="nav-item"><a href="#partners">Partners</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#">News &amp; Notice <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="#latest-news">Latest News</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#notice-board">Notice Board</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="notice-bar">
+            <div class="notice-content">
+                Important Notice:Graduate Diploma in Leather, Lether Goods &
+                Footwear Management for batch-3,4 (Deadline: 01 December 2024)
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!----------------------------------- Main EWU Home Section ----------------------------------->
+        <section id="ewuHome">
+
+            <!-- Left Section: University Name and Program -->
+            <div class="left-section">
+                <div class="presentation-message">
+                    <h1>East West University</h1>
+                    <p>Graduate Diploma in Leather, Leather Goods, and Footwear Management</p>
+                </div>
+            </div>
+
+            <!-- Middle Section: Carousel -->
+            <div class="carousel-section">
+                <div class="slideshow-container">
+                    <div class="slides fade">
+                        <img src="../Resources/Carousel/c1.jpg" alt="Image 1">
+                    </div>
+                    <div class="slides fade">
+                        <img src="../Resources/Carousel/c2.jpg" alt="Image 2">
+                    </div>
+                    <div class="slides fade">
+                        <img src="../Resources/Carousel/c3.jpg" alt="Image 3">
+                    </div>
+                    <div class="slides fade">
+                        <img src="../Resources/Carousel/c4.jpg" alt="Image 4">
+                    </div>
+                    <div class="indicator-container">
+                        <div class="indicator" data-index="0"></div>
+                        <div class="indicator" data-index="1"></div>
+                        <div class="indicator" data-index="2"></div>
+                        <div class="indicator" data-index="3"></div>
+                    </div>
+
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+
+            </div>
+
+            <!-- Right Section: Admission Boxes -->
+            <div class="right-section">
+                <div class="side-box-container">
+                    <div class="side-box">
+                        <h3>Admission Test Results</h3>
+                        <p>Fall 2024</p>
+                        <a href="../Resources/Admission Result.pdf" class="button" target="_blank">View Result</a>
+                    </div>
+                    <div class="side-box">
+                        <h3>Fall 2024 Admission</h3>
+                        <p>Graduate Diploma in Leather, Leather Goods, and Footwear Management</p>
+
+                        <!-- Wrap the buttons in a div for alignment -->
+                        <div class="button-container">
+                            <a href="../HTML/applyOnline.html" class="button" target="_blank">Apply Now</a>
+                            <a href="../Resources/MainImages/flyer.jpg" class="button" target="_blank">Flyer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../JS/script.js"></script>
+    <script src="../JS/noticeBoard.js"></script>
+</body>
+
+</html>

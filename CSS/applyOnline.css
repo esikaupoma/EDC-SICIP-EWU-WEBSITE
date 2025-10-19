@@ -1,0 +1,146 @@
+.apply-online {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Resources/images/ewuBackground/3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Centered text content */
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.text-box p {
+    font-size: 22px;
+    margin: 12px 0 30px;
+    padding: 0 30px;
+    line-height: 1.8;
+}
+
+/* Button styles */
+.apply_btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 15px 70px;
+    font-size: 22px;
+    background: transparent;
+    position: relative;
+    margin-top: 10px;
+}
+
+.apply_btn:hover {
+    border: 1px solid #6d3b3b;
+    background: #8b3633;
+    transition: 0.5s;
+}
+
+/* ========== Responsive Breakpoints ========== */
+
+@media (max-width: 1200px) {
+    .text-box h1 {
+        font-size: 48px;
+    }
+
+    .text-box p {
+        font-size: 20px;
+    }
+
+    .apply_btn {
+        font-size: 20px;
+        padding: 14px 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .text-box h1 {
+        font-size: 42px;
+    }
+
+    .text-box p {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .apply_btn {
+        font-size: 18px;
+        padding: 12px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 36px;
+    }
+
+    .text-box p {
+        font-size: 17px;
+        padding: 0 15px;
+    }
+
+    .apply_btn {
+        font-size: 17px;
+        padding: 12px 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-box {
+        top: 55%;
+    }
+
+    .text-box h1 {
+        font-size: 30px;
+    }
+
+    .text-box p {
+        font-size: 16px;
+        padding: 0 12px;
+    }
+
+    .apply_btn {
+        font-size: 16px;
+        padding: 10px 35px;
+    }
+}
+
+@media (max-width: 400px) {
+    .text-box h1 {
+        font-size: 26px;
+    }
+
+    .text-box p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .apply_btn {
+        font-size: 15px;
+        padding: 10px 28px;
+    }
+}
+
+@media (max-width: 340px) {
+    .text-box h1 {
+        font-size: 24px;
+    }
+
+    .text-box p {
+        font-size: 14p

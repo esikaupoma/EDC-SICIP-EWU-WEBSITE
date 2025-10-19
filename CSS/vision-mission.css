@@ -1,0 +1,79 @@
+.vm-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+}
+
+
+.vm-section {
+    margin-bottom: 30px;
+}
+
+.vm-section h3 {
+    font-size: 1.375rem;
+    color: #354268;
+    margin-bottom: 12px;
+}
+
+.vm-section p,
+.vm-section ul {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: justify;
+}
+
+.vm-section ul {
+    padding-left: 20px;
+}
+
+.vm-section ul li {
+    margin-bottom: 12px;
+}
+
+/* ===================== Responsive Breakpoints ===================== */
+
+/* 1200px and below */
+@media screen and (max-width: 1200px) {
+
+    .vm-section p,
+    .vm-section ul {
+        font-size: 1.1rem;
+    }
+}
+
+/* 992px and below */
+@media screen and (max-width: 992px) {
+
+    .vm-section p,
+    .vm-section ul {
+        font-size: 1rem;
+    }
+}
+
+/* 768px and below */
+@media screen and (max-width: 768px) {
+
+    .vm-section p,
+    .vm-section ul {
+        font-size: 0.9rem;
+    }
+}
+
+/* 576px and below */
+@media screen and (max-width: 576px) {
+
+    .vm-section p,
+    .vm-section ul {
+        font-size: 0.85rem;
+    }
+
+}
+
+/* 375px and below */
+@media screen and (max-width: 375px) {
+
+    .vm-section p,
+    .vm-section ul {
+        font-size: 0.8rem;
+    }
+}

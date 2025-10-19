@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Notice Board</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Title Bar */
+        .title-class {
+            border-bottom: 4px solid #182e59;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-class h2 {
+            margin: 0;
+            padding: 4px 18px;
+            color: #fff;
+            background: #182e59;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-class h2::before {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 0;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #182e59;
+        }
+
+        .pagination-header {
+            display: flex;
+            gap: 10px;
+        }
+
+        .arrow-btn {
+            font-size: 1.5rem;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.4s;
+        }
+
+        .arrow-btn:hover:not(:disabled) {
+            background: #182e59;
+            color: #fff;
+        }
+
+        .arrow-btn:disabled {
+            color: #bbb;
+            cursor: not-allowed;
+        }
+
+        /* Notice Item */
+        .notice-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+
+        .notice-info {
+            flex-grow: 1;
+        }
+
+        .notice-title {
+            font-size: 1.05rem;
+            color: #1a3365;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .notice-title:hover {
+            color: #4caf50;
+        }
+
+        .notice-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.05rem;
+            color: orange;
+            margin-top: 5px;
+        }
+
+        .open-pdf-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.6rem;
+            color: #1a3365;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .open-pdf-btn:hover {
+            transform: scale(1.2);
+            color: #4caf50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-class">
+            <h2>Notice Board</h2>
+            <div class="pagination-header">
+                <button id="prev-btn" class="arrow-btn">←</button>
+                <button id="next-btn" class="arrow-btn">→</button>
+            </div>
+        </div>
+
+        <div id="notice-list"></div>
+    </div>
+
+    <script>
+        const notices = [
+            { date: "30-04-2025", title: "Admission Test Results (Batch 5 and 6)", pdf: "/Resources/files/AdmissionResultBatch-5&6.pdf" },
+            { date: "30-12-2024", title: "Admission Test Results (Batch 3 and 4)", pdf: "/Resources/files/AdmissionResultBatch-3&4.pdf" },
+            { date: "29-09-2024", title: "Admission Test Results (Batch 1 and 2)", pdf: "/Resources/files/AdmissionResultBatch-1&2.pdf" },
+            { date: "10-08-2024", title: "Orientation Schedule for New Students", pdf: "/Resources/files/Orientation.pdf" },
+            { date: "25-07-2024", title: "Semester Final Exam Routine", pdf: "/Resources/files/ExamRoutine.pdf" },
+            { date: "15-07-2024", title: "Mid-Term Notice for All Programs", pdf: "/Resources/files/MidTermNotice.pdf" },
+            { date: "01-07-2024", title: "Class Schedule Update", pdf: "/Resources/files/ScheduleUpdate.pdf" },
+            { date: "20-06-2024", title: "Library Hour Extension", pdf: "/Resources/files/LibraryNotice.pdf" },
+            { date: "10-06-2024", title: "Lab Maintenance Notice", pdf: "/Resources/files/LabMaintenance.pdf" },
+            { date: "01-06-2024", title: "New Faculty Introduction", pdf: "/Resources/files/NewFaculty.pdf" },
+            { date: "01-05-2024", title: "Course Registration Deadline", pdf: "/Resources/files/RegistrationDeadline.pdf" },
+            { date: "15-04-2024", title: "Holiday Notice for Eid", pdf: "/Resources/files/HolidayEid.pdf" }
+        ];
+
+        const noticesPerPage = 10;
+        let currentPage = 1;
+
+        const noticeList = document.getElementById('notice-list');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function renderNotices() {
+            const start = (currentPage - 1) * noticesPerPage;
+            const end = start + noticesPerPage;
+            const currentNotices = notices.slice(start, end);
+
+            noticeList.innerHTML = '';
+
+            currentNotices.forEach(notice => {
+                const item = document.createElement('div');
+                item.className = 'notice-item';
+                item.innerHTML = `
+          <div class="notice-info">
+            <a href="${notice.pdf}" class="notice-title">${notice.title}</a>
+            <div class="notice-date"><i class="fa-regular fa-calendar-days"></i> ${notice.date}</div>
+          </div>
+          <button class="open-pdf-btn" onclick="location.href='${notice.pdf}'">+</button>
+        `;
+                noticeList.appendChild(item);
+            });
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = end >= notices.length;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderNotices();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage * noticesPerPage < notices.length) {
+                currentPage++;
+                renderNotices();
+            }
+        });
+
+        renderNotices();
+    </script>
+</body>
+
+</html>

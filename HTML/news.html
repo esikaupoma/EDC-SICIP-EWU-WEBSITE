@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>University News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #002147;
+            margin: 0;
+            padding: 40px 250px;
+        }
+
+        /* Title with arrows */
+        .title-class {
+            border-bottom: 4px solid #182e59;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-class h2 {
+            margin: 0;
+            padding: 4px 18px;
+            color: #fff;
+            background: #182e59;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-class h2::before {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 0;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #182e59;
+        }
+
+        /* Arrow buttons */
+        .pagination-header {
+            display: flex;
+            gap: 10px;
+        }
+
+        .arrow-btn {
+            font-size: 1.5rem;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.4s;
+        }
+
+        .arrow-btn:hover:not(:disabled) {
+            background: #182e59;
+            color: #fff;
+        }
+
+        .arrow-btn:disabled {
+            color: #bbb;
+            cursor: not-allowed;
+        }
+
+        /* News Grid */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 320px));
+            /* justify-content: center; */
+            /* center the grid on partial pages */
+            gap: 20px;
+        }
+
+        .news-card {
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .news-content {
+            padding: 15px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-title {
+            font-weight: bold;
+            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+            color: #002147;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .news-description {
+            font-size: 0.9rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .news-image {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-class">
+        <h2>University News & Announcements</h2>
+        <div class="pagination-header">
+            <button id="prev-btn" class="arrow-btn">←</button>
+            <button id="next-btn" class="arrow-btn">→</button>
+        </div>
+    </div>
+
+    <div class="news-container" id="newsContainer"></div>
+
+    <script>
+        const newsData = [
+            { title: "FGD on GDLFM Program", description: "A focused group discussion on the GDLFM program was held.", date: "July 19, 2025", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/FGD_GDLFM_Program.jpg" },
+            { title: "Orientation Program for Batch 5 and Batch 6", description: "Orientation program conducted for students of Batch 5 and Batch 6.", date: "May 13, 2025", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/Orientation-Batch-5&6.jpg" },
+            { title: "Orientation Program for Batch 3 and Batch 4", description: "Orientation program conducted for students of Batch 3 and Batch 4.", date: "January 15, 2025", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/Orientation-Batch-3&4.jpg" },
+            { title: "Celebration Ceremony of Graduate Diploma in Leather, Leather Goods and Footwear Management", description: "A celebration ceremony for the Graduate Diploma in Leather, Leather Goods, and Footwear Management was held.", date: "December 8, 2024", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/celebration_ceremony.jpg" },
+            { title: "Orientation Program for Batch 1 and Batch 2", description: "Orientation program conducted for students of Batch 1 and Batch 2.", date: "October 2, 2024", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/Orientation-Batch-1&2.jpg" },
+            { title: "MoU Signing Ceremony", description: "Memorandum of Understanding signing ceremony took place.", date: "July 31, 2024", pdf: "../Resources/files/Admission_Result.pdf", image: "../Resources/images/News/Mou_signing.jpg" },
+            // Extra fake data for pagination demo
+            { title: "Event 7", description: "Details for event 7.", date: "June 1, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 8", description: "Details for event 8.", date: "June 2, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 9", description: "Details for event 9.", date: "June 3, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 10", description: "Details for event 10.", date: "June 4, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 11", description: "Details for event 11.", date: "June 5, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 12", description: "Details for event 12.", date: "June 6, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+            { title: "Event 13", description: "Details for event 13.", date: "June 7, 2024", pdf: "#", image: "https://via.placeholder.com/400x200" },
+        ];
+
+        const newsPerPage = 12;
+        let currentPage = 1;
+
+        const container = document.getElementById('newsContainer');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function renderNews() {
+            const start = (currentPage - 1) * newsPerPage;
+            const end = start + newsPerPage;
+            const currentNews = newsData.slice(start, end);
+
+            container.innerHTML = '';
+
+            currentNews.forEach(news => {
+                const card = document.createElement('div');
+                card.className = 'news-card';
+                card.innerHTML = `
+                    <img class="news-image" src="${news.image}" alt="${news.title}" />
+                    <div class="news-content">
+                        <h3 class="news-title">${news.title}</h3>
+                        <div class="news-date">${news.date}</div>
+                        <p class="news-description">${news.description}</p>
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    window.open(news.pdf, '_blank');
+                });
+                container.appendChild(card);
+            });
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = end >= newsData.length;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderNews();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage * newsPerPage < newsData.length) {
+                currentPage++;
+                renderNews();
+            }
+        });
+
+        renderNews();
+    </script>
+</body>
+
+</html>

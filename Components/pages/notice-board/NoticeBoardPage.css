@@ -1,0 +1,84 @@
+.notice {
+    max-width: 900px;
+    margin: auto;
+    padding: 150px 0px 80px;
+}
+
+.title-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.pagination-header {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-btn {
+    font-size: 1.5rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.4s;
+}
+
+.arrow-btn:hover:not(:disabled) {
+    background: #182e59;
+    color: #fff;
+}
+
+.arrow-btn:disabled {
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+/* Notice Item */
+.notice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.notice-info {
+    flex-grow: 1;
+}
+
+.notice-title {
+    font-size: 1.05rem;
+    color: #1a3365;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.notice-title:hover {
+    color: #4caf50;
+}
+
+.notice-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.05rem;
+    color: orange;
+    margin-top: 5px;
+}
+
+.open-pdf-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #1a3365;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.open-pdf-btn:hover {
+    transform: scale(1.2);
+    color: #4caf50;
+}
